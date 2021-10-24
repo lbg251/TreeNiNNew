@@ -34,20 +34,10 @@ import sys, os, copy
 os.environ['TERM'] = 'linux'
 #pyroot module
 import numpy as np  
-# import scipy as sp
 import random
-# import matplotlib.pyplot as plt
 random.seed(1)
-# import itertools
-# import ROOT as r
-# import json 
 import time
 import pickle
-# import ROOT as r
-
-# import copy
-# from rootpy.vector import LorentzVector
-# from recnn.preprocessing import _pt
 
 start_time = time.time()
 
@@ -96,18 +86,15 @@ class ParticleInfo(object):
 
 
 
-cardfile=sys.argv[1]
-sampletype=sys.argv[2]  # train, val,test
-# root_file=sys.argv[3]
-# outfilestring=sys.argv[4]
-dir_subjets= sys.argv[3]
-# dir_subjets='../data/input/test_subjets/'
-out_dir=sys.argv[4]
+#cardfile=sys.argv[1]
+cardfile = '/Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/cardtest.dat'
+#samplename=sys.argv[2]  
+samplename = 'ginkgo' #a flag for getting jets. Can be 'test', 'train', 'val', or 'ginkgo' for all jets
+#in_dir= sys.argv[3]
+in_dir = '/Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/raw_trees/'
+out_dir='/Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/reclustered_trees/'
+#out_dir=sys.argv[4]
 
-
-# Turn to true if preprocessing (shift, rotate, etc)
-# rot_boost_rot_flip=True
-rot_boost_rot_flip=False
 #-------------------------------------------------------------------------------------------------------------
 #Read cardfile
 with open(cardfile) as f:
@@ -161,10 +148,9 @@ for command in commands:
        Ncolors=int(command[1])
     elif(command[0]=='KAPPA'):
        kappa=float(command[1])
-       
+#jetdef_tree = 'truth'  
+jetdef_tree = 'kt'      
 preprocess_cmnd=preprocess_label.split('_')    
-
-
 
 # print("ptmin",ptmin)
 # print("ptmax",ptmax)
@@ -176,8 +162,6 @@ preprocess_cmnd=preprocess_label.split('_')
 #counter for current entry
 n=-1
 # out_dir='../data/output/top_qcd_jet/kt/'
-# out_dir='../data/output/top_qcd_jet/kt_shift_rot_flip/'
-# out_dir='../data/output/test_top_qcd/'
 if not os.path.exists(out_dir):
   os.makedirs(out_dir)
 
@@ -202,8 +186,7 @@ print('Loading files for subjets')
 print('Subjet array format ([[[pTsubj1],[pTsubj2],...],[[etasubj1],[etasubj2],...],[[phisubj1],[phisubj2],...]])')
 print('-----------'*10)
 
-subjetlist = [filename for filename in np.sort(os.listdir(dir_subjets)) if (sampletype in filename and filename.endswith('.pkl'))]
-# subjetlist = [filename for filename in np.sort(os.listdir(dir_subjets)) if ('subjets' in filename and eventtype in filename and 'nompi_5' in filename and filename.endswith('.dat'))]
+subjetlist = [filename for filename in np.sort(os.listdir(in_dir)) if (samplename in filename and filename.endswith('.pkl'))]
 
 N_analysis=len(subjetlist)
 print('Number of subjet files =',N_analysis)
@@ -230,7 +213,7 @@ for ifile in range(N_analysis):
   if(Ntotjets>N_jets):
      break
      
-  file=dir_subjets+subjetlist[ifile]
+  file=in_dir+subjetlist[ifile]
 #   out_file = open('top_tag_reference_dataset/tree_list/tree_'+subjetlist[ifile].split('.')[0]+'.pkl', "wb")
 
 #   print('out_file=',out_file)
@@ -246,71 +229,30 @@ for ifile in range(N_analysis):
   
   #Loop over all the events
   for element in jets_file:
-    
-    event=pf.make_pseudojet(element[0])
+   if jetdef_tree =='truth':
+      jet = element
+      label = jet['label']
+      reclustered_jets.append((jet, label))
+   else:
+      event=pf.make_pseudojet(element['leaves'])
 #     print('Event const=',event)
-    label=element[1]
+      label=element['label']
 #     print('label=',label)
-
     # Recluster jet constituents
-    out_jet = pf.recluster(event, Rjet,jetdef_tree)  
-#     print('length out_jet =',len(out_jet)) 
-#     print('Jets [m,pT,eta,phi,pz]=',[[subjet.m(),subjet.perp(),subjet.eta(),subjet.phi_std(),subjet.pz()] for subjet in out_jet])
-
-
-    #-----------------------   
-    # If preprocessing (shift, rot, etc)
-    if rot_boost_rot_flip:
-    
-        # Keep only the leading jet. Then recluster jets in subjets of R=0.3
-        R_preprocess=Rtrim
-        subjets = pf.recluster(out_jet[0].constituents(), R_preprocess,jetdef_tree) 
-    #     print('---'*20)
-    #     print('Subjets [mass]=',[subjet.m() for subjet in subjets])
-    #     print('Subjets [mass,pT,eta,phi,pz]=',[[subjet.m(),subjet.perp(),subjet.eta(), subjet.phi_std(),subjet.pz()] for subjet in subjets]) 
-      
-        #------
-        # Preprocess the jet constituents 
-        preprocessed_const_fj= pf.preprocess_nyu(subjets) 
-    #     print('preprocessed_const_fj [pT,eta,phi,m,pz]=',[[const_fj.perp(),const_fj.eta(),const_fj.phi(),const_fj.m(),const_fj.pz()] for const_fj in preprocessed_const_fj])
-        
-    #     #--------------------------------
-    #     # Cross-check: leading subjet should have eta=0 (pz=0), phi=0. 2nd leading one should have eta=0 (pz=0). The 3rd one should have pz>0
-#         preprocessed_subjets = pf.recluster(preprocessed_const_fj, R_preprocess,'kt') 
-    #     print(' Number of subjets=',len(preprocessed_subjets))
-#         print('---'*20)
-#         print('Subjets [mass]=',[subjet.m() for subjet in preprocessed_subjets])
-#         print('Subjet mass difference=',np.asarray([subjet.m() for subjet in preprocessed_subjets])-np.asarray([subjet.m() for subjet in subjets]))
-#         print('Subjets [mass,pT,eta,phi,pz]=',[[subjet.m(),subjet.perp(),subjet.eta(), subjet.phi_std(),subjet.pz()] for subjet in preprocessed_subjets])
-    
-    
-        # Recluster preprocessed jet constituents 
-        preprocessed_subjets = pf.recluster(preprocessed_const_fj, Rjet,jetdef_tree) 
-#         print(' Number of subjets=',len(preprocessed_subjets))
-#         print('Subjets [mass,pT,eta,phi,pz]=',[[subjet.m(),subjet.perp(),subjet.eta(), subjet.phi_std(),subjet.pz()] for subjet in preprocessed_subjets])   
-#         print('Jet mass difference=',np.asarray([subjet.m() for subjet in preprocessed_subjets])-np.asarray([subjet.m() for subjet in out_jet])) 
-#         jet_mass_difference.append(np.asarray([subjet.m() for subjet in preprocessed_subjets])-np.asarray([subjet.m() for subjet in out_jet]))
-#         jet_mass_difference.append(preprocessed_subjets[0].m()-out_jet[0].m())
-    
-        out_jet=preprocessed_subjets
-#         print('Preprocessed Subjets [mass,pT,eta,phi,pz]=',[[subjet.m(),subjet.perp(),subjet.eta(), subjet.phi_std(),subjet.pz()] for subjet in out_jet])  
-
-
-    #-----------------------------------
+      out_jet = pf.recluster(event, Rjet,jetdef_tree)  
     # #Create a dictionary with all the jet tree info (topology, constituents features: eta, phi, pT, E, muon label)
-    jets_tree = pf.make_tree_list(out_jet)
+      jets_tree = pf.make_tree_list(out_jet)
 #     print('jets_tree=',jets_tree)
     
     #Keep only the leading jet
-    for tree, content, mass, pt in [jets_tree[0]]:
-    
+      for tree, content, mass, pt in [jets_tree[0]]:
 #       print('Content=',content)
-      jet_pT.append(pt)
-      jet_mass.append(mass)
-      jet = pf.make_dictionary(tree,content,mass,pt)
+         jet_pT.append(pt)
+         jet_mass.append(mass)
+         jet = pf.make_dictionary(tree,content,mass,pt)
     
 #       print('jet dictionary=',jet)
-      reclustered_jets.append((jet, label))
+         reclustered_jets.append((jet, label))
 #       pickle.dump((jet, label), out_file, protocol=2)
       
       counter+=1
@@ -327,12 +269,8 @@ for ifile in range(N_analysis):
 
 # print('reclustered_jets=',reclustered_jets)
 
-#If preprocessing
-if rot_boost_rot_flip:
-  out_filename = str(out_dir)+'tree_'+subjetlist[ifile].split('.')[0]+'_'+str(counter)+'_R_'+str(R_preprocess)+'Clustering_'+str(jetdef_tree)+'_rot_boost_rot_flip.pkl'
-else:
 #   out_filename = str(out_dir)+'tree_'+subjetlist[ifile].split('.')[0]+'_'+str(counter)+'.pkl'
-  out_filename = str(out_dir)+'Rjet_'+str(Rjet)+'Clustering_'+str(jetdef_tree)+'tree_'+subjetlist[ifile].split('.')[0]+'.pkl'
+out_filename = str(out_dir)+'Clustering_'+str(jetdef_tree)+'tree_'+subjetlist[ifile].split('.')[0]+'.pkl'
 
 
 # SAVE OUTPUT FILE
@@ -344,15 +282,7 @@ with open(out_filename, "wb") as f: pickle.dump(reclustered_jets, f, protocol=2)
 print('counter=',counter)  
 # sys.exit()
 
-  
-  
-  
-  
-    
-    
-    
-    
-       
+   
 #-------------------------------------------------------------------------------------------------------------
 # Make histograms: Input= (out_dir,data,bins,plotname,title,xaxis,yaxis)
 hist_dir='plots/histograms/top_tag_reference_dataset/'
