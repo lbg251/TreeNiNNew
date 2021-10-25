@@ -148,8 +148,10 @@ for command in commands:
        Ncolors=int(command[1])
     elif(command[0]=='KAPPA'):
        kappa=float(command[1])
+
+print(jetdef_tree)
 #jetdef_tree = 'truth'  
-jetdef_tree = 'kt'      
+#jetdef_tree = 'kt'      
 preprocess_cmnd=preprocess_label.split('_')    
 
 # print("ptmin",ptmin)
