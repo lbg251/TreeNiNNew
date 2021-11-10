@@ -24,7 +24,9 @@ MINPTFRACTION 0.05
 RJET 0.8
 #RJET 0.4
 
-JETDEF antikt
+#JETDEF antikt
+#JETDEF truth
+JETDEF ptdesc
 #JETDEF kt
 #JETDEF CA
 

@@ -359,14 +359,14 @@ if __name__=='__main__':
   ##------------------------------------------------------------  
   parser = argparse.ArgumentParser()
 
-  arser.add_argument('--eval_data_dir', default='../data/preprocessed_trees/', help="Directory containing the input batches")
+  parser.add_argument('--eval_data_dir', default='../data/preprocessed_trees/', help="Directory containing the input batches")
 
-  parser.add_argument('--model_dir', default='experiments/', help="Directory containing params.json")
+  parser.add_argument('--model_dir', default='/recnn/experiments', help="Directory containing params.json")
   parser.add_argument('--restore_file', default=None,
                       help="Optional, name of the file in --model_dir containing weights to reload before \
                       training")  # 'best' or 'last'
 
-  parser.add_argument('--jet_algorithm', default=algo, help="jet algorithm")
+  parser.add_argument('--jet_algorithm', help="jet algorithm")
   parser.add_argument('--architecture', default='simpleRecNN', help="RecNN architecture")
   parser.add_argument('--sample_type', default='ginkgo', help="sample type")
 

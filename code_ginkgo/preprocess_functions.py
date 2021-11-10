@@ -46,8 +46,7 @@ def make_pseudojet(event):
   
 # #------------------------------------------------------------------------
 # Recluster the jet constituents
-def recluster(particles, Rjet,jetdef_tree):
-  
+def recluster(particles, Rjet,jetdef_tree):  
   #----------------------------------------------
   # Recluster the jet constituents and access the clustering history
   #set up our jet definition and a jet selector
@@ -58,18 +57,15 @@ def recluster(particles, Rjet,jetdef_tree):
   elif jetdef_tree=='CA':
     tree_jet_def = fj.JetDefinition(fj.cambridge_algorithm, Rjet)
   else:
-    print('Missing jet definition')
-        
-#   selector = fj.SelectorPtMin(20.0) #We add extra constraints
-#   out_jet = selector(fj.sorted_by_pt(tree_jet_def(preprocess_const_list)))[0] #Apply jet pT cut of 20 GeV and sort jets by pT. Recluster the jet constituents, they should give us only 1 jet if using the original jet radius.
-   
+    print('Missing jet definition')        
+    selector = fj.SelectorPtMin(20.0) #We add extra constraints
+    out_jet = selector(fj.sorted_by_pt(tree_jet_def(preprocess_const_list)))[0] #Apply jet pT cut of 20 GeV and sort jets by pT. Recluster the jet constituents, they should give us only 1 jet if using the original jet radius.
   out_jet = fj.sorted_by_pt(tree_jet_def(particles)) #Recluster the jet constituents, they should give us only 1 jet if using the original jet radius
 #       print( 'jets=',jets)
 #       print('jets const=',jets[0].constituents())
 #       print('----'*20) 
       
 #       print('Out_jet=',out_jet.px(),out_jet.py(),out_jet.pz(),out_jet.e(),out_jet.m(),out_jet.perp())
-
   return out_jet
 
 
@@ -94,7 +90,7 @@ def make_tree_list(out_jet):
     if i>0: print('More than 1 reclustered jet') 
     
     return jets_tree
-
+  
 # #------------------------------------------------------------------------
 #Create a dictionary with all the jet tree info (topology, constituents features: eta, phi, pT, E, muon label)
 # Keep only the leading jet
@@ -130,7 +126,90 @@ def make_dictionary(tree,content,mass,pt,charge=None,abs_charge=None,muon=None):
     
   return jet
 
+# Get the 4-vector pT
+def _pt(v):
+#     pz = v[2]
+#     p = (v[0:3] ** 2).sum() ** 0.5
+#     eta = 0.5 * (np.log(p + pz) - np.log(p - pz))
+#     pt2 = p / np.cosh(eta)
+    pt=(v[0:2] ** 2).sum() ** 0.5
+#     print('pt2=',pt2)
+#     print('pt=',pt)
+    
+    return pt
+
+
+def sequentialize_by_pt(jet, reverse=False):
+    # transform the tree into a sequence ordered by pt
+
+  jet = copy.deepcopy(jet)
+
+#     print('jet["tree"]=',jet["tree"])
+#     print('---'*20)
+
+  leaves = np.where(jet["tree"][:, 0] == -1)[0] #The entries give the position of the leaves in the content list 
+#     print('leaves=',leaves)
+#     print('---'*20)
+    
+  nodes = [n for n in leaves]# Same as leaves
+#     print('nodes=',nodes)
+#     print('---'*20)    
+    
+  content = [jet["content"][n] for n in nodes] #Here we get the leaves content
+#     print('content=',content)
+#     print('---'*20)  
+        
+  nodes = [i for i in range(len(nodes))]
+  tree = [[-1, -1] for n in nodes] #We make a tree of length=Number of leaves, where the entries are all (-1), as expected for leaves
+#     print('tree=',tree)
+#     print('---'*20)     
   
+  #Order the list of leaves based on pT. reverse=False gives the list in ascending pT
+  pool = sorted([n for n in nodes],
+                key=lambda n: _pt(content[n]),
+                reverse=reverse)
+#     print('pool=',pool)
+#     print('Ordered pT content=',[ _pt(content[n]) for n in pool])
+#     print('---'*20)                  
+                
+  next_id = len(pool)
+
+  #Remake the tree. We start from the end of the ordered list of leaves. So in reverse=False we cluster first the greatest pT constituents. => reverse=False gives a tree ordered in descending order in pT
+  while len(pool) >= 2:
+      right = pool[-1]
+      left = pool[-2]
+#         print('right=',_pt(content[right]))
+#         print('left=',_pt(content[left]))
+#         print('---'*20)       
+      del pool[-1]
+      del pool[-1]
+
+      # We build the tree as a ladder. So we append the right subjet to the list 
+      nodes.append(next_id)
+#         print('next_id=',next_id)
+#         print('---'*20)        
+      c = (content[left] + content[right])
+
+      if len(c) == 5:
+          c[-1] = -1
+
+      content.append(c) # We append the new subjet to the contents list
+#         print('pT c=',_pt(c))
+#         print('pT content[next_id]=c?',_pt(content[next_id]))
+      tree.append([left, right]) # We append the children locations of the new subjet (locations in the contents list)
+#         print('tree=',tree)
+#         print('tree[next_id]=',tree[next_id])
+#         print('---'*20)
+#         print('---'*20)
+      pool.append(next_id) #We append the location of the new subjet 'c', so content[next_id]=c
+      next_id += 1
+
+  jet["content"] = np.array(content)
+  jet["tree"] = np.array(tree).astype(int)
+  jet["root_id"] = len(jet["tree"]) - 1
+
+  return jet
+
   
   
   
@@ -276,23 +355,6 @@ def preprocess_nyu(subjets):
         out_const.append(fj.PseudoJet(temp.Px(),temp.Py(),temp.Pz(),temp.E()))
 
     return out_const
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #------------------------------------------------------------------------------------------------------------- 

@@ -16,22 +16,22 @@ sys.path.append("/Users/laurengreenspan/GitDLs/ClusterTrellis/src")
 from ginkgo import invMass_ginkgo
 #logger = get_logger(level = logging.WARNING)
 parser = argparse.ArgumentParser()
-# parser.add_argument("--job_num", help="The number of the job that's running", type=int)
-# parser.add_argument("--Nsamples", help="Number of Generated Jets", type=int)
-# args = parser.parse_args()
+parser.add_argument("--job_num", help="The number of the job that's running", type=int)
+parser.add_argument("--Nsamples", help="Number of Generated Jets", type=int)
+args = parser.parse_args()
 
 from ginkgo import likelihood_invM as likelihood
 
 #logger = get_logger(level=logging.WARNING) 
 
-#i = args.job_num
-i=1
+i = args.job_num
+#i=1
 
 params = {}
 minLeaves = 1
-maxLeaves = 10
-#Nsamples = args.Nsamples
-Nsamples = 4
+maxLeaves = 15
+Nsamples = args.Nsamples
+#Nsamples = 10
 maxNTry = 20000
 
 QCD_mass = 14.#TeV, from Top Tagging paper 
@@ -57,7 +57,7 @@ params['pt_min']=pt_min
 params['tree_rate']=tree_rate
 params['root_rate']=root_rate
 
-pickle.dump(params, open("/Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/raw_trees/params"+str(i)+".pkl","wb"), protocol = 2)
+pickle.dump(params, open("/Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/data/raw_trees/params"+str(i)+".pkl","wb"), protocol = 2)
 simulator = invMass_ginkgo.Simulator(jet_p=jet4vec,
                                      pt_cut=float(pt_min),
                                      Delta_0=M2start,
@@ -80,7 +80,7 @@ for count,value in enumerate(QCD_jet_list):
     eta = 0.5 * (np.log(p+pz) - np.log(p-pz))
     phi = np.arctan2(py,px)
     
-    value['label']=1
+    value['label']=0
     value['pt']=pT
     value['root_id']=QCD_jet_list[count]['root_id']
     value['energy']=QCD_jet_list[count]['content'][0,0]
@@ -118,4 +118,4 @@ for count,value in enumerate(W_jet_list):
 
 
 jets_list = QCD_jet_list + W_jet_list
-pickle.dump(jets_list, open("/Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/raw_trees/ginkgo_jets"+str(i)+".pkl","wb"), protocol = 2)
+pickle.dump(jets_list, open("/Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/data/raw_trees/ginkgo_jets"+str(i)+".pkl","wb"), protocol = 2)
