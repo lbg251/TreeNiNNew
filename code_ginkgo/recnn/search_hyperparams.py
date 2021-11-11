@@ -14,6 +14,7 @@ import sys
 import numpy as np
 import utils
 import time
+import json
 #-------------------------------------------------------------------------------------------------------------
 # Global variables
 #-----------------------------
@@ -54,11 +55,11 @@ parser.add_argument('--gpu', default=2,
                     help='Select the GPU')
 parser.add_argument('--parent_dir', default='/Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/experiments',
                     help='Directory containing params.json')
-#parser.add_argument('--data_dir', default='../data/inputTrees/'+sample_name, help="Directory containing the raw datasets")
+#parser.add_argument('--data_dir', default='../data/data_di/', help="Directory containing the raw datasets")
 parser.add_argument('--eval_data_dir', default='../data/preprocessed_trees/', help="Directory containing the input batches")
-#parser.add_argument('--sample_name', default=sample_name, help="Sample name")
+parser.add_argument('--sample_name', default='ginkgo_kt_48jets', help="Sample name")
 
-#parser.add_argument('--jet_algorithm', default=jet_algorithm, help="jet algorithm")
+parser.add_argument('--jet_algorithm', default='kt', help="jet algorithm")
 
 parser.add_argument('--architecture', default=architecture, help="RecNN architecture")
 
@@ -148,10 +149,12 @@ if __name__ == "__main__":
     # Load the "reference" parameters from parent_dir json file
     args = parser.parse_args()
     json_path = os.path.join(args.parent_dir, 'template_params.json')
-    print("path is"+str(json_path))
     assert os.path.isfile(json_path), "No json configuration file found at {}".format(json_path)
+   # with open(json_path) as f:
+   #   params = json.load(f)
+   # print(params)
     params = utils.Params(json_path)
-
+    print(params.learning_rate)
     NrunStart= int(args.NrunStart)
     NrunFinish= int(args.NrunFinish)
 
@@ -172,7 +175,7 @@ if __name__ == "__main__":
                 for batch_size in batch_sizes:
                   for decay in decays: 
                     for learning_rate in learning_rates:
-
+                      print(params)
                       params.learning_rate=learning_rate
                       params.decay=decay
                       params.batch_size=batch_size
@@ -187,8 +190,8 @@ if __name__ == "__main__":
                       params.jet_algorithm = jet_algo 
                   #-----------------------------------------
                   # Launch job (name has to be unique)
-                      sample_name = args.sample_type+'_'+jet_algo+'_'+str(params.myN_jets)+'_jets'
-                      job_name = str(sample_name)+'_'+str(name)+'_lr_'+str(learning_rate)+'_decay_'+str(decay)+'_batch_'+str(batch_size)+'_epochs_'+str(num_epoch)+'_hidden_'+str(hidden_dim)+'_Njets_'+str(jet_number)+'_features_'+str(params.features)
+                      name = sample_name
+                      job_name = str(name)+'_lr_'+str(learning_rate)+'_decay_'+str(decay)+'_batch_'+str(batch_size)+'_epochs_'+str(num_epoch)+'_hidden_'+str(hidden_dim)+'_Njets_'+str(jet_number)+'_features_'+str(params.features)
 
                  
                   
@@ -216,6 +219,7 @@ jet_numbers=[1200000],
 Nfeatures=7,
 dir_name=str(args.eval_data_dir),
 name=architecture,
+info="test",
 sample_name=str(args.sample_name),
 Nrun_start=NrunStart,
 Nrun_finish=NrunFinish) #gpu1   
