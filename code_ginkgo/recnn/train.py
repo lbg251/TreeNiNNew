@@ -372,22 +372,21 @@ if __name__=='__main__':
   parser.add_argument('--sample_type', default='ginkgo', help="sample type")
 
 
-  # Load the parameters from json file
-  args = parser.parse_args()
-  json_path = os.path.join(args.model_dir, 'params.json')
-  assert os.path.isfile(json_path), "No json configuration file found at {}".format(json_path)
-  params = utils.Params(json_path)
-
-  ##-------------------
-  # Set the logger
-  utils.set_logger(os.path.join(args.model_dir, 'train.log'))
-  
  # dir_jets_subjets= args.data_dir
+  args = parser.parse_args()
   algo=args.jet_algorithm
   sample_type = args.sample_type
   architecture=args.architecture
   model_dir = str(args.eval_data_dir)+'/'+str(args.jet_algorithm)
   os.system('mkdir -p '+model_dir)
+  ##-------------------
+  # Set the logger
+  utils.set_logger(os.path.join(args.model_dir, 'train.log'))
+  # Load the parameters from json file
+
+  json_path = os.path.join(args.model_dir, 'params.json')
+  assert os.path.isfile(json_path), "No json configuration file found at {}".format(json_path)
+  params = utils.Params(json_path)
   ##-------------------
   sample_filename = args.sample_name  
   logging.info('sample_filename={}'.format(sample_filename))
