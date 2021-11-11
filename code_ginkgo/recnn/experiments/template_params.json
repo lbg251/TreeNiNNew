@@ -1,13 +1,15 @@
-{"learning_rate":2e-3,
-"decay":0.9,
-"batch_size":64,  
-"num_epochs":40, 
-"hidden":64, 
-"features":7,   
-"myN_jets": 48,
-"jet_algorithm":"kt",
-"dir_name":"experiments",
-"name":"test",
-"sample_name":"test",
-"nrun_start":0,
-"nrun_finish":15}
+{
+    "learning_rate":2e-3,
+    "decay":0.9,
+    "batch_size":64,
+    "num_epochs":40,
+    "hidden":64,
+    "features":7,
+    "myN_jets": 48,
+    "jet_algorithm":"kt",
+    "dir_name":"experiments",
+    "name":"test",
+    "sample_name":"test",
+    "nrun_start":0,
+    "nrun_finish":15
+}

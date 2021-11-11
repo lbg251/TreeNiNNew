@@ -53,9 +53,9 @@ PYTHON = sys.executable
 parser = argparse.ArgumentParser()
 parser.add_argument('--gpu', default=2,
                     help='Select the GPU')
-parser.add_argument('--parent_dir', default='/Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/experiments',
+parser.add_argument('--parent_dir', default='/experiments/',
                     help='Directory containing params.json')
-#parser.add_argument('--data_dir', default='../data/data_di/', help="Directory containing the raw datasets")
+parser.add_argument('--data_dir', default='../data/preprocessed_trees/', help="Directory containing the raw datasets (No! Check this out)")
 parser.add_argument('--eval_data_dir', default='../data/preprocessed_trees/', help="Directory containing the input batches")
 parser.add_argument('--sample_name', default='ginkgo_kt_48jets', help="Sample name")
 
@@ -74,7 +74,7 @@ parser.add_argument('--sample_type', default='ginkgo', help="sample type")
 
 #------------------------------------------
 # TRAINING
-def launch_training_job(parent_dir, data_dir, job_name, params, GPU,sample_name, algo):
+def launch_training_job(parent_dir, data_dir, eval_data_dir,job_name, params, GPU,sample_name, algo):
     """Launch training of the model with a set of hyperparameters in parent_dir/job_name
     Args:
         model_dir: (string) directory containing config, weights and log
@@ -150,9 +150,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     json_path = os.path.join(args.parent_dir, 'template_params.json')
     assert os.path.isfile(json_path), "No json configuration file found at {}".format(json_path)
-   # with open(json_path) as f:
-   #   params = json.load(f)
-   # print(params)
+
     params = utils.Params(json_path)
     print(params.learning_rate)
     NrunStart= int(args.NrunStart)

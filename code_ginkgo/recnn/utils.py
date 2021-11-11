@@ -21,7 +21,7 @@ class Params():
             params = json.load(f)
             self.__dict__.update(params)
 
-            json.loads("file.json")
+ #           json.loads("file.json")
 
 
     def save(self, json_path):

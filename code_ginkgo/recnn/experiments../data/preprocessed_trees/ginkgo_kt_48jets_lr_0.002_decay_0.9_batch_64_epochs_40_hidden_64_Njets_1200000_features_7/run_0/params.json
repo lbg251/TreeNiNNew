@@ -1,0 +1,16 @@
+{
+    "learning_rate": 0.002,
+    "decay": 0.9,
+    "batch_size": 64,
+    "num_epochs": 40,
+    "hidden": 64,
+    "features": 7,
+    "myN_jets": 1200000,
+    "jet_algorithm": "kt",
+    "dir_name": "experiments",
+    "name": "test",
+    "sample_name": "test",
+    "nrun_start": 0,
+    "nrun_finish": 25,
+    "info": "test"
+}
