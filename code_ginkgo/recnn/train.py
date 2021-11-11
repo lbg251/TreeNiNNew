@@ -294,13 +294,13 @@ def train_and_evaluate(model, train_data, val_data, optimizer, loss_fn, metrics,
 
 #         
 #         # Minimize the loss on the val set
-#         val_acc = val_metrics['loss']
-#         is_best = val_acc <= best_val_acc
+        val_acc = val_metrics['loss']
+        is_best = val_acc <= best_val_acc
         
         
         # Maximize the bg rejection at 30% tag eff on the val set
-        val_acc = inv_fpr
-        is_best = val_acc >= best_val_acc
+        # val_acc = inv_fpr
+        # is_best = val_acc >= best_val_acc
         
         # Save history
         history['train_loss'].append(train_metrics['loss'])
@@ -348,20 +348,21 @@ if __name__=='__main__':
   ##----------------------------------------------------------------------------------------------------------
   # Global variables
   ##-------------------
-  data_dir='../data/'
-  os.system('mkdir -p '+data_dir)
+  # data_dir='../data/'
+  # os.system('mkdir -p '+data_dir)
   
-  # Select the right dir for jets data
-  trees_dir='preprocessed_trees/'
-  os.system('mkdir -p '+data_dir+'/'+trees_dir)
+  # # Select the right dir for jets data
+  # trees_dir='preprocessed_trees/'
+  # os.system('mkdir -p '+data_dir+'/'+trees_dir)
   
 
   ##------------------------------------------------------------  
   parser = argparse.ArgumentParser()
+  parser.add_argument('--data_dir', default='../data/preprocessed_trees/', help="Directory containing the input batches")
 
-  parser.add_argument('--eval_data_dir', default='../data/preprocessed_trees/', help="Directory containing the input batches")
+  parser.add_argument('--eval_data_dir', default='../recnn/experiments', help="Directory containing the input batches")
 
-  parser.add_argument('--model_dir', default='/recnn/experiments', help="Directory containing params.json")
+  #parser.add_argument('--model_dir', default='/recnn/experiments', help="Directory containing params.json")
   parser.add_argument('--restore_file', default=None,
                       help="Optional, name of the file in --model_dir containing weights to reload before \
                       training")  # 'best' or 'last'
@@ -381,20 +382,19 @@ if __name__=='__main__':
   # Set the logger
   utils.set_logger(os.path.join(args.model_dir, 'train.log'))
   
-  dir_jets_subjets= args.data_dir
+ # dir_jets_subjets= args.data_dir
   algo=args.jet_algorithm
   sample_type = args.sample_type
   architecture=args.architecture
-  
+  model_dir = str(args.eval_data_dir)+'/'+str(args.jet_algorithm)
+  os.system('mkdir -p '+model_dir)
   ##-------------------
-  
-  sample_filename=sample_type+'_'+algo+'_'+str(params.myN_jets)+'_jets'
-  
+  sample_filename = args.sample_name  
   logging.info('sample_filename={}'.format(sample_filename))
   
-  train_data=data_dir+trees_dir+'train_'+sample_filename+'.pkl'
-  val_data=data_dir+trees_dir+'dev_'+sample_filename+'.pkl'
-  test_data=data_dir+trees_dir+'test_'+sample_filename+'.pkl'
+  train_data=args.data_dir+'train_'+sample_filename+'.pkl'
+  val_data=args.data_dir+'dev_'+sample_filename+'.pkl'
+  test_data=args.data_dir+'test_'+sample_filename+'.pkl'
     
   start_time = time.time()  
   

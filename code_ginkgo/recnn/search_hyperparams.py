@@ -57,7 +57,7 @@ parser.add_argument('--parent_dir', default='/experiments/',
                     help='Directory containing params.json')
 parser.add_argument('--data_dir', default='../data/preprocessed_trees/', help="Directory containing the raw datasets (No! Check this out)")
 parser.add_argument('--eval_data_dir', default='../data/preprocessed_trees/', help="Directory containing the input batches")
-parser.add_argument('--sample_name', default='ginkgo_kt_48jets', help="Sample name")
+#parser.add_argument('--sample_name', default='ginkgo_kt_48jets', help="Sample name")
 
 parser.add_argument('--jet_algorithm', default='kt', help="jet algorithm")
 
@@ -65,7 +65,10 @@ parser.add_argument('--architecture', default=architecture, help="RecNN architec
 
 parser.add_argument('--NrunStart', default=0, help="Initial Model Number for the scan")
 parser.add_argument('--NrunFinish', default=25, help="Final Model Number for the scan")
-parser.add_argument('--sample_type', default='ginkgo', help="sample type")
+
+parser.add_argument('--numjets', default=48, help="Final Model Number for the scan")
+#parser.add_argument('--sample_type', default='ginkgo', help="sample type")
+
 
 #-------------------------------------------------------------------------------------------------------------
 #//////////////////////    FUNCTIONS     //////////////////////////////////////////////
@@ -134,7 +137,7 @@ def launch_evaluation_job(parent_dir, data_dir, eval_data_dir, job_name, params,
 
     #--------------
     # Launch evaluation with this config
-    cmd_eval = "CUDA_VISIBLE_DEVICES={gpu} {python} evaluate.py --model_dir={model_dir} --data_dir={data_dir} --sample_name={sample_name} --jet_algorithm={algo} --architecture={architecture} --restore_file={restore_file}".format(gpu=GPU, python=PYTHON, model_dir=model_dir, data_dir=eval_data_dir,sample_name=sample_name, algo=algo, architecture=architecture, restore_file=restore_file)
+    cmd_eval = "CUDA_VISIBLE_DEVICES={gpu} {python} evaluate.py --model_dir={model_dir} --data_dir={data_dir} --sample_name={sample_name} --jet_algorithm={algo} --architecture={architecture} --restore_file={restore_file}".format(gpu=GPU, python=PYTHON, model_dir=model_dir, data_dir=args.eval_data_dir,sample_name=sample_name, algo=algo, architecture=architecture, restore_file=restore_file)
     print(cmd_eval)
     check_call(cmd_eval, shell=True)
 
@@ -155,7 +158,10 @@ if __name__ == "__main__":
     print(params.learning_rate)
     NrunStart= int(args.NrunStart)
     NrunFinish= int(args.NrunFinish)
-
+    sample_name=args.sample_type+'_'+args.jet_algorithm+'_'+args.numjets+'_jets'
+    jet_algorithm = args.jet_algorithm
+    eval_data_dir = args.eval_data_dir
+    data_dir = args.data_dir
     # Perform hyperparameters scans
     def multi_scan(jet_algorithm,learning_rates,decays, batch_sizes,num_epochs,hidden_dims,jet_numbers,Nfeatures,dir_name,name, info, sample_name, Nrun_start,Nrun_finish):
     
@@ -188,8 +194,9 @@ if __name__ == "__main__":
                       params.jet_algorithm = jet_algo 
                   #-----------------------------------------
                   # Launch job (name has to be unique)
-                      name = sample_name
-                      job_name = str(name)+'_lr_'+str(learning_rate)+'_decay_'+str(decay)+'_batch_'+str(batch_size)+'_epochs_'+str(num_epoch)+'_hidden_'+str(hidden_dim)+'_Njets_'+str(jet_number)+'_features_'+str(params.features)
+#                      name = sample_name
+                      job_name = sample_name
+#          job_name = str(name)+'_lr_'+str(learning_rate)+'_decay_'+str(decay)+'_batch_'+str(batch_size)+'_epochs_'+str(num_epoch)+'_hidden_'+str(hidden_dim)+'_Njets_'+str(jet_number)+'_features_'+str(params.features)
 
                  
                   
@@ -218,10 +225,9 @@ Nfeatures=7,
 dir_name=str(args.eval_data_dir),
 name=architecture,
 info="test",
-sample_name=str(args.sample_name),
+sample_name=sample_name,
 Nrun_start=NrunStart,
 Nrun_finish=NrunFinish) #gpu1   
-
 
 
 
