@@ -705,8 +705,8 @@ class DataLoader(object):
           contents.append(jet_contents[levels[-1]])
 
           prev_inner = inner
-      print('contents_all=',contents)
-      print('levels_all=',levels)
+    #   print('contents_all=',contents)
+    #   print('levels_all=',levels)
       print('----'*20)
       print('subjets per level=',n_level)
       print('----'*20)
@@ -726,11 +726,11 @@ class DataLoader(object):
         levels[i]=np.concatenate((levels[i],np.zeros((pad_dim))))                 
         print('/////'*20)
         print('max_n_level and len(levels[i])=',max_n_level,len(levels[i]))
-        print('levels[i]=',levels[i])
+        # print('levels[i]=',levels[i])
 
         print('TEST contents[i].shape=',contents[i].shape)
         print('TEST np.zeros((pad_dim,int(features))',(np.zeros((pad_dim,int(features)))).shape)
-        print('contents[i]=',contents[i])
+        # print('contents[i]=',contents[i])
         contents[i]=np.concatenate((contents[i],np.zeros((pad_dim,int(features)))))
 
       ##-----------------------------------------------

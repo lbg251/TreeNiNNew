@@ -1,0 +1,481 @@
+2022-01-14 11:12:03,431:INFO: sample_filename=ginkgo_kt_48jets
+2022-01-14 11:12:03,431:INFO: ------------------------------------------------------------
+2022-01-14 11:12:03,432:INFO: Loading the datasets...
+2022-01-14 11:12:03,435:INFO: - done loading the datasets
+2022-01-14 11:12:03,436:INFO: ------------------------------------------------------------
+2022-01-14 11:12:03,519:INFO: Total parameters of the model= 73751
+2022-01-14 11:12:03,519:INFO: Total weights of the model= 73751
+2022-01-14 11:12:03,520:INFO: Model= PredictFromParticleEmbeddingNiNReLU(
+  (fc_u): Linear(in_features=4, out_features=50, bias=True)
+  (fc_h): Linear(in_features=150, out_features=50, bias=True)
+  (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+  (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  (transform): GRNNTransformSimpleNiNReLU(
+    (fc_u): Linear(in_features=4, out_features=50, bias=True)
+    (fc_h): Linear(in_features=150, out_features=50, bias=True)
+    (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+    (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  )
+  (fc1): Linear(in_features=50, out_features=50, bias=True)
+  (fc2): Linear(in_features=50, out_features=50, bias=True)
+  (fc3): Linear(in_features=50, out_features=1, bias=True)
+)
+2022-01-14 11:12:03,520:INFO: ------------------------------------------------------------
+2022-01-14 11:12:03,520:INFO: Building optimizer...
+2022-01-14 11:12:03,521:INFO: Starting training for 2 epoch(s)
+2022-01-14 11:12:03,522:INFO: Epoch 1/2
+2022-01-14 11:12:07,932:INFO: Batch creation time4.265913724899292
+2022-01-14 11:12:07,958:INFO: Computin Model Output and Loss
+2022-01-14 11:12:08,002:INFO: - Train metrics: accuracy: 0.5000 ; loss: 0.7969
+2022-01-14 11:31:32,680:INFO: sample_filename=ginkgo_kt_48jets
+2022-01-14 11:31:32,681:INFO: ------------------------------------------------------------
+2022-01-14 11:31:32,682:INFO: Loading the datasets...
+2022-01-14 11:31:32,685:INFO: - done loading the datasets
+2022-01-14 11:31:32,685:INFO: ------------------------------------------------------------
+2022-01-14 11:31:32,793:INFO: Total parameters of the model= 73751
+2022-01-14 11:31:32,794:INFO: Total weights of the model= 73751
+2022-01-14 11:31:32,795:INFO: Model= PredictFromParticleEmbeddingNiNReLU(
+  (fc_u): Linear(in_features=4, out_features=50, bias=True)
+  (fc_h): Linear(in_features=150, out_features=50, bias=True)
+  (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+  (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  (transform): GRNNTransformSimpleNiNReLU(
+    (fc_u): Linear(in_features=4, out_features=50, bias=True)
+    (fc_h): Linear(in_features=150, out_features=50, bias=True)
+    (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+    (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  )
+  (fc1): Linear(in_features=50, out_features=50, bias=True)
+  (fc2): Linear(in_features=50, out_features=50, bias=True)
+  (fc3): Linear(in_features=50, out_features=1, bias=True)
+)
+2022-01-14 11:31:32,795:INFO: ------------------------------------------------------------
+2022-01-14 11:31:32,795:INFO: Building optimizer...
+2022-01-14 11:31:32,796:INFO: Starting training for 2 epoch(s)
+2022-01-14 11:31:32,796:INFO: Epoch 1/2
+2022-01-14 11:31:37,768:INFO: Batch creation time4.805493116378784
+2022-01-14 11:31:37,798:INFO: Computin Model Output and Loss
+2022-01-14 11:31:37,847:INFO: - Train metrics: accuracy: 0.5000 ; loss: 0.9061
+2022-01-14 11:36:49,329:INFO: sample_name=
+2022-01-14 11:36:49,329:INFO: --------------------------------------------------------------------------------
+2022-01-14 11:36:49,329:INFO: sample_filename=_kt_800_Njets_
+2022-01-14 11:36:49,329:INFO: ------------------------------------------------------------
+2022-01-14 11:36:49,329:INFO: Loading the datasets...
+2022-01-14 11:46:16,522:INFO: sample_name=
+2022-01-14 11:46:16,522:INFO: --------------------------------------------------------------------------------
+2022-01-14 11:46:16,523:INFO: sample_filename=_kt_800jets_
+2022-01-14 11:46:16,523:INFO: ------------------------------------------------------------
+2022-01-14 11:46:16,523:INFO: Loading the datasets...
+2022-01-14 11:48:19,629:INFO: sample_name=
+2022-01-14 11:48:19,630:INFO: --------------------------------------------------------------------------------
+2022-01-14 11:48:19,630:INFO: sample_filename=_kt_800jets_
+2022-01-14 11:48:19,631:INFO: ------------------------------------------------------------
+2022-01-14 11:48:19,631:INFO: Loading the datasets...
+2022-01-14 11:52:05,878:INFO: sample_name=run_0
+2022-01-14 11:52:05,879:INFO: --------------------------------------------------------------------------------
+2022-01-14 11:52:05,880:INFO: sample_filename=run_0_kt_800jets_
+2022-01-14 11:52:05,880:INFO: ------------------------------------------------------------
+2022-01-14 11:52:05,880:INFO: Loading the datasets...
+2022-01-14 11:53:23,201:INFO: sample_name=ginkgo
+2022-01-14 11:53:23,202:INFO: --------------------------------------------------------------------------------
+2022-01-14 11:53:23,202:INFO: sample_filename=ginkgo_kt_800jets_
+2022-01-14 11:53:23,203:INFO: ------------------------------------------------------------
+2022-01-14 11:53:23,203:INFO: Loading the datasets...
+2022-01-14 11:54:05,789:INFO: sample_name=ginkgo
+2022-01-14 11:54:05,790:INFO: --------------------------------------------------------------------------------
+2022-01-14 11:54:05,790:INFO: sample_filename=ginkgo_kt_800jets
+2022-01-14 11:54:05,790:INFO: ------------------------------------------------------------
+2022-01-14 11:54:05,791:INFO: Loading the datasets...
+2022-01-14 11:54:05,801:INFO: - done loading the datasets
+2022-01-14 11:54:05,802:INFO: ------------------------------------------------------------
+2022-01-14 11:54:05,877:INFO: Total parameters of the model= 73751
+2022-01-14 11:54:05,877:INFO: Total weights of the model= 73751
+2022-01-14 11:54:05,878:INFO: Model= PredictFromParticleEmbeddingNiNReLU(
+  (fc_u): Linear(in_features=4, out_features=50, bias=True)
+  (fc_h): Linear(in_features=150, out_features=50, bias=True)
+  (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+  (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  (transform): GRNNTransformSimpleNiNReLU(
+    (fc_u): Linear(in_features=4, out_features=50, bias=True)
+    (fc_h): Linear(in_features=150, out_features=50, bias=True)
+    (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+    (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  )
+  (fc1): Linear(in_features=50, out_features=50, bias=True)
+  (fc2): Linear(in_features=50, out_features=50, bias=True)
+  (fc3): Linear(in_features=50, out_features=1, bias=True)
+)
+2022-01-14 11:54:05,878:INFO: ------------------------------------------------------------
+2022-01-14 11:54:05,878:INFO: Building optimizer...
+2022-01-14 11:54:05,879:INFO: Starting training for 2 epoch(s)
+2022-01-14 11:54:05,883:INFO: Epoch 1/2
+2022-01-14 11:54:24,270:INFO: - Train metrics: accuracy: 0.5500 ; loss: 0.7043
+2022-01-14 11:55:10,346:INFO: - Eval metrics : accuracy: 0.5188 ; loss: 0.6954
+2022-01-14 11:55:50,409:INFO: - Found new best bg rejection = 3.6363636363636362
+2022-01-14 11:55:50,411:INFO: Epoch 2/2
+2022-01-14 11:56:07,036:INFO: - Train metrics: accuracy: 0.5292 ; loss: 0.6984
+2022-01-14 11:56:53,704:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.7124
+2022-01-14 11:57:33,780:INFO: Total time (minutes) =3.4664995789527895
+2022-01-14 12:02:01,720:INFO: sample_name=ginkgo
+2022-01-14 12:02:01,720:INFO: --------------------------------------------------------------------------------
+2022-01-14 12:02:01,720:INFO: sample_filename=ginkgo_kt_800jets
+2022-01-14 12:02:01,721:INFO: ------------------------------------------------------------
+2022-01-14 12:02:01,721:INFO: Loading the datasets...
+2022-01-14 12:02:01,729:INFO: - done loading the datasets
+2022-01-14 12:02:01,729:INFO: ------------------------------------------------------------
+2022-01-14 12:02:01,739:INFO: Total parameters of the model= 73751
+2022-01-14 12:02:01,739:INFO: Total weights of the model= 73751
+2022-01-14 12:02:01,740:INFO: Model= PredictFromParticleEmbeddingNiNReLU(
+  (fc_u): Linear(in_features=4, out_features=50, bias=True)
+  (fc_h): Linear(in_features=150, out_features=50, bias=True)
+  (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+  (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  (transform): GRNNTransformSimpleNiNReLU(
+    (fc_u): Linear(in_features=4, out_features=50, bias=True)
+    (fc_h): Linear(in_features=150, out_features=50, bias=True)
+    (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+    (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  )
+  (fc1): Linear(in_features=50, out_features=50, bias=True)
+  (fc2): Linear(in_features=50, out_features=50, bias=True)
+  (fc3): Linear(in_features=50, out_features=1, bias=True)
+)
+2022-01-14 12:02:01,740:INFO: ------------------------------------------------------------
+2022-01-14 12:02:01,740:INFO: Building optimizer...
+2022-01-14 12:02:01,740:INFO: Starting training for 2 epoch(s)
+2022-01-14 12:02:01,744:INFO: Epoch 1/2
+2022-01-14 12:02:19,012:INFO: - Train metrics: accuracy: 0.5375 ; loss: 0.7197
+2022-01-14 12:03:07,067:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.7116
+2022-01-14 12:03:47,147:INFO: - Found new best bg rejection = 2.962962962962963
+2022-01-14 12:03:47,150:INFO: Epoch 2/2
+2022-01-14 12:04:04,204:INFO: - Train metrics: accuracy: 0.5208 ; loss: 0.7067
+2022-01-14 12:04:53,137:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.7111
+2022-01-14 12:05:22,976:INFO: Total time (minutes) =3.354250264167786
+2022-01-14 12:05:30,513:INFO: sample_name=ginkgo
+2022-01-14 12:05:30,513:INFO: --------------------------------------------------------------------------------
+2022-01-14 12:05:30,513:INFO: sample_filename=ginkgo_kt_800jets
+2022-01-14 12:05:30,513:INFO: ------------------------------------------------------------
+2022-01-14 12:05:30,513:INFO: Loading the datasets...
+2022-01-14 12:05:30,522:INFO: - done loading the datasets
+2022-01-14 12:05:30,522:INFO: ------------------------------------------------------------
+2022-01-14 12:05:30,534:INFO: Total parameters of the model= 73751
+2022-01-14 12:05:30,534:INFO: Total weights of the model= 73751
+2022-01-14 12:05:30,534:INFO: Model= PredictFromParticleEmbeddingNiNReLU(
+  (fc_u): Linear(in_features=4, out_features=50, bias=True)
+  (fc_h): Linear(in_features=150, out_features=50, bias=True)
+  (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+  (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  (transform): GRNNTransformSimpleNiNReLU(
+    (fc_u): Linear(in_features=4, out_features=50, bias=True)
+    (fc_h): Linear(in_features=150, out_features=50, bias=True)
+    (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+    (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  )
+  (fc1): Linear(in_features=50, out_features=50, bias=True)
+  (fc2): Linear(in_features=50, out_features=50, bias=True)
+  (fc3): Linear(in_features=50, out_features=1, bias=True)
+)
+2022-01-14 12:05:30,535:INFO: ------------------------------------------------------------
+2022-01-14 12:05:30,535:INFO: Building optimizer...
+2022-01-14 12:05:30,535:INFO: Starting training for 2 epoch(s)
+2022-01-14 12:05:30,537:INFO: Epoch 1/2
+2022-01-14 12:05:46,616:INFO: - Train metrics: accuracy: 0.4667 ; loss: 0.7143
+2022-01-14 12:06:33,570:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6933
+2022-01-14 12:07:13,628:INFO: - Found new best bg rejection = 4.444444444444445
+2022-01-14 12:07:13,629:INFO: Epoch 2/2
+2022-01-14 12:07:27,606:INFO: - Train metrics: accuracy: 0.5125 ; loss: 0.6947
+2022-01-14 12:08:14,047:INFO: - Eval metrics : accuracy: 0.4937 ; loss: 0.7015
+2022-01-14 12:08:54,114:INFO: Total time (minutes) =3.3933444817860923
+2022-01-14 12:18:44,883:INFO: sample_name=ginkgo
+2022-01-14 12:18:44,883:INFO: --------------------------------------------------------------------------------
+2022-01-14 12:18:44,883:INFO: sample_filename=ginkgo_kt_800jets
+2022-01-14 12:18:44,883:INFO: ------------------------------------------------------------
+2022-01-14 12:18:44,883:INFO: Loading the datasets...
+2022-01-14 12:18:44,891:INFO: - done loading the datasets
+2022-01-14 12:18:44,892:INFO: ------------------------------------------------------------
+2022-01-14 12:18:44,901:INFO: Total parameters of the model= 73751
+2022-01-14 12:18:44,902:INFO: Total weights of the model= 73751
+2022-01-14 12:18:44,902:INFO: Model= PredictFromParticleEmbeddingNiNReLU(
+  (fc_u): Linear(in_features=4, out_features=50, bias=True)
+  (fc_h): Linear(in_features=150, out_features=50, bias=True)
+  (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+  (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  (transform): GRNNTransformSimpleNiNReLU(
+    (fc_u): Linear(in_features=4, out_features=50, bias=True)
+    (fc_h): Linear(in_features=150, out_features=50, bias=True)
+    (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+    (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  )
+  (fc1): Linear(in_features=50, out_features=50, bias=True)
+  (fc2): Linear(in_features=50, out_features=50, bias=True)
+  (fc3): Linear(in_features=50, out_features=1, bias=True)
+)
+2022-01-14 12:18:44,902:INFO: ------------------------------------------------------------
+2022-01-14 12:18:44,902:INFO: Building optimizer...
+2022-01-14 12:18:44,903:INFO: Starting training for 2 epoch(s)
+2022-01-14 12:18:44,907:INFO: Epoch 1/2
+2022-01-14 12:18:59,038:INFO: - Train metrics: accuracy: 0.5000 ; loss: 0.7081
+2022-01-14 12:19:45,696:INFO: - Eval metrics : accuracy: 0.4937 ; loss: 0.6997
+2022-01-14 12:20:25,760:INFO: - Found new best bg rejection = 3.8095238095238093
+2022-01-14 12:20:25,761:INFO: Epoch 2/2
+2022-01-14 12:20:40,895:INFO: - Train metrics: accuracy: 0.5375 ; loss: 0.6894
+2022-01-14 12:21:27,154:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.7018
+2022-01-14 12:22:07,215:INFO: Total time (minutes) =3.3721988836924237
+2022-01-14 12:28:40,869:INFO: sample_name=ginkgo
+2022-01-14 12:28:40,869:INFO: --------------------------------------------------------------------------------
+2022-01-14 12:28:40,869:INFO: sample_filename=ginkgo_kt_800jets
+2022-01-14 12:28:40,869:INFO: ------------------------------------------------------------
+2022-01-14 12:28:40,869:INFO: Loading the datasets...
+2022-01-14 12:28:40,873:INFO: - done loading the datasets
+2022-01-14 12:28:40,873:INFO: ------------------------------------------------------------
+2022-01-14 12:28:40,882:INFO: Total parameters of the model= 73751
+2022-01-14 12:28:40,882:INFO: Total weights of the model= 73751
+2022-01-14 12:28:40,882:INFO: Model= PredictFromParticleEmbeddingNiNReLU(
+  (fc_u): Linear(in_features=4, out_features=50, bias=True)
+  (fc_h): Linear(in_features=150, out_features=50, bias=True)
+  (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+  (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  (transform): GRNNTransformSimpleNiNReLU(
+    (fc_u): Linear(in_features=4, out_features=50, bias=True)
+    (fc_h): Linear(in_features=150, out_features=50, bias=True)
+    (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+    (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  )
+  (fc1): Linear(in_features=50, out_features=50, bias=True)
+  (fc2): Linear(in_features=50, out_features=50, bias=True)
+  (fc3): Linear(in_features=50, out_features=1, bias=True)
+)
+2022-01-14 12:28:40,883:INFO: ------------------------------------------------------------
+2022-01-14 12:28:40,883:INFO: Building optimizer...
+2022-01-14 12:28:40,883:INFO: Starting training for 2 epoch(s)
+2022-01-14 12:28:40,884:INFO: Epoch 1/2
+2022-01-14 12:28:46,874:INFO: - Train metrics: accuracy: 0.4292 ; loss: 0.7256
+2022-01-14 12:29:09,831:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6984
+2022-01-14 12:29:29,868:INFO: - Found new best bg rejection = 3.3333333333333335
+2022-01-14 12:29:29,869:INFO: Epoch 2/2
+2022-01-14 12:29:37,668:INFO: - Train metrics: accuracy: 0.4875 ; loss: 0.7089
+2022-01-14 12:29:56,006:INFO: sample_name=ginkgo
+2022-01-14 12:29:56,006:INFO: --------------------------------------------------------------------------------
+2022-01-14 12:29:56,007:INFO: sample_filename=ginkgo_kt_800jets
+2022-01-14 12:29:56,007:INFO: ------------------------------------------------------------
+2022-01-14 12:29:56,007:INFO: Loading the datasets...
+2022-01-14 12:29:56,010:INFO: - done loading the datasets
+2022-01-14 12:29:56,011:INFO: ------------------------------------------------------------
+2022-01-14 12:29:56,021:INFO: Total parameters of the model= 73751
+2022-01-14 12:29:56,021:INFO: Total weights of the model= 73751
+2022-01-14 12:29:56,021:INFO: Model= PredictFromParticleEmbeddingNiNReLU(
+  (fc_u): Linear(in_features=4, out_features=50, bias=True)
+  (fc_h): Linear(in_features=150, out_features=50, bias=True)
+  (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+  (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+  (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+  (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  (transform): GRNNTransformSimpleNiNReLU(
+    (fc_u): Linear(in_features=4, out_features=50, bias=True)
+    (fc_h): Linear(in_features=150, out_features=50, bias=True)
+    (fc_u_inner1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer1): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_inner): Linear(in_features=4, out_features=50, bias=True)
+    (fc_u_outer): Linear(in_features=4, out_features=50, bias=True)
+    (fc_N0): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N1): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N2): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N3): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N4): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N5): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N6): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N7): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N8): Linear(in_features=50, out_features=50, bias=True)
+    (fc_N9): Linear(in_features=50, out_features=50, bias=True)
+  )
+  (fc1): Linear(in_features=50, out_features=50, bias=True)
+  (fc2): Linear(in_features=50, out_features=50, bias=True)
+  (fc3): Linear(in_features=50, out_features=1, bias=True)
+)
+2022-01-14 12:29:56,022:INFO: ------------------------------------------------------------
+2022-01-14 12:29:56,022:INFO: Building optimizer...
+2022-01-14 12:29:56,022:INFO: Starting training for 2 epoch(s)
+2022-01-14 12:29:56,023:INFO: Epoch 1/2
+2022-01-14 12:30:01,886:INFO: - Train metrics: accuracy: 0.5375 ; loss: 0.7184
+2022-01-14 12:30:25,255:INFO: - Eval metrics : accuracy: 0.4688 ; loss: 0.6947
+2022-01-14 12:30:45,301:INFO: - Found new best bg rejection = 2.7586206896551726
+2022-01-14 12:30:45,303:INFO: Epoch 2/2
+2022-01-14 12:30:51,948:INFO: - Train metrics: accuracy: 0.5375 ; loss: 0.6876
