@@ -355,43 +355,11 @@ if __name__=='__main__':
   # Select the right dir for jets data
   trees_dir='preprocessed_trees/'
   os.system('mkdir -p '+data_dir+'/'+trees_dir)
-  
-  ##-------------------
-  #If true the preprocessed trees are generated and saved. Do it only once and then turn in off
-#   make_preprocess=True
-#   make_preprocess=False
 
-#   pT_order=True
-  pT_order=False
 
-  # Select the input sample
-#   nyu=True
-#   nyu=False
-  
   sample_name='ginkgo'
   algo=''
-  ##-------------------  
-#   if nyu==True:
-#     #Directory with the input trees
-#     sample_name='nyu_jets'
-#     
-#   #   algo='antikt-antikt-delphes'
-# #     algo='antikt-kt-delphes'
-# #     algo='antikt-antikt'
-#     algo=''
-#     
-#   else:
-#     algo=''
-#     
-#     #Directory with the input trees
-#     ### CHECK THAT SEARCH_HYPERPARAMS.PY HAS THE SAME SAMPLE NAME
-#     
-# #     sample_name='top_qcd_jets_antikt_antikt'
-# #     sample_name='top_qcd_jets_antikt_kt'
-#     sample_name='top_qcd_jets_antikt_CA'
-    
-    #labels to look for the input files
-  #   sg='tt'
+
   sg='ttbar' 
   bg='qcd'
   
@@ -399,6 +367,7 @@ if __name__=='__main__':
   
   ##------------------------------------------------------------  
   parser = argparse.ArgumentParser()
+  parser.add_argument('--sample_name', default='ginkgo', help="Directory containing the raw datasets")
   parser.add_argument('--data_dir', default='../data/preprocessed_trees/', help="Directory containing the raw datasets")
   parser.add_argument('--model_dir', default='experiments/ginkgo', help="Directory containing params.json")
   parser.add_argument('--restore_file', default=None,
@@ -417,7 +386,7 @@ if __name__=='__main__':
   ##-------------------
   # Set the logger
   utils.set_logger(os.path.join(args.model_dir, 'train.log'))
-  
+
   dir_jets_subjets= args.data_dir
   algo=args.jet_algorithm
   
