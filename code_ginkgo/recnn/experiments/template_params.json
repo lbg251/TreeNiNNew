@@ -1,15 +1,17 @@
 {
     "learning_rate":2e-3,
     "decay":0.9,
-    "batch_size":64,
-    "num_epochs":40,
+    "batch_size":1,
+    "num_epochs":4,
     "hidden":64,
-    "features":7,
+    "features":4,
     "myN_jets": 48,
-    "jet_algorithm":"kt",
+    "jet_algorithms":"kt",
     "dir_name":"experiments",
     "name":"test",
     "sample_name":"test",
     "nrun_start":0,
-    "nrun_finish":15
+    "nrun_finish":15,
+    "number_of_labels_types":1,
+    "save_summary_steps": 2
 }

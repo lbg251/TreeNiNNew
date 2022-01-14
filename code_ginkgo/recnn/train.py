@@ -4,12 +4,11 @@
 import argparse
 import logging
 import os
-import sys
 import numpy as np
+import tqdm
 import torch
 import torch.optim as optim
 from tqdm import trange
-import tqdm
 from sklearn.utils import check_random_state
 from sklearn.model_selection import train_test_split
 import time
@@ -18,7 +17,6 @@ import utils
 import model.data_loader as dl
 import model.dataset as dataset
 from model import recNet as net
-from model import preprocess 
 from sklearn.metrics import roc_curve, auc
 from scipy import interp
 
@@ -26,6 +24,7 @@ from scipy import interp
 #/////////////////////    TRAINING AND EVALUATION FUNCTIONS     //////////////////////////////////////////////
 #-------------------------------------------------------------------------------------------------------------
 def train(model, optimizer, loss_fn, data_iterator, metrics, params, num_steps):
+    print('test_train')
     """Train the model on `num_steps` batches
     Args:
         model: (torch.nn.Module) the neural network superclass
@@ -47,26 +46,24 @@ def train(model, optimizer, loss_fn, data_iterator, metrics, params, num_steps):
     ##-----------------------------
     # Use tqdm for progress bar
     t = trange(num_steps) 
-    
     data_iterator_iter = iter(data_iterator)
-    
-    
+
     for i in t:
-    
+
         time_before_batch=time.time() 
-        
         # fetch the next training batch
         levels, children, n_inners, contents, n_level, labels_batch=next(data_iterator_iter)
-
+        print('labels_batch=',labels_batch) #Stuck on previous line.
         # shift tensors to GPU if available
         if params.cuda:
+          print('shifting to GPU')
           levels = levels.cuda()
           children=children.cuda()
           n_inners=n_inners.cuda()
           contents=contents.cuda()
           n_level= n_level.cuda()
           labels_batch =labels_batch.cuda()
-      
+        print("Record operations in Computational Graph?")
         # convert them to Variables to record operations in the computational graph
         levels=torch.autograd.Variable(levels)
         children=torch.autograd.Variable(children)
@@ -76,24 +73,20 @@ def train(model, optimizer, loss_fn, data_iterator, metrics, params, num_steps):
         labels_batch = torch.autograd.Variable(labels_batch)    
     
         time_after_batch=time.time()
-#         logging.info("Batch creation time" + str(time_after_batch-time_before_batch))
+        logging.info("Batch creation time" + str(time_after_batch-time_before_batch))
         
         ##-----------------------------
         # Feedforward pass through the NN
         output_batch = model(params, levels, children, n_inners, contents, n_level)
         
-        
-#         logging.info("Batch usage time" + str(time.time()-time_after_batch))
-#         logging.info('####'*20)
-        
+        logging.info("Computin Model Output and Loss")
         # compute model output and loss
         labels_batch = labels_batch.float()  #Uncomment if using torch.nn.BCELoss() loss function
         output_batch=output_batch.view((params.batch_size)) # For 1 final neuron 
         loss = loss_fn(output_batch, labels_batch)
         
-#         print('output_batch=',output_batch)
-#         print('labels_batch=',labels_batch)
-#         print('y_pred=',output_batch)
+        print('labels_batch=',labels_batch)
+        print('y_pred=',output_batch)
 
         # clear previous gradients, compute gradients of all variables wrt loss
         optimizer.zero_grad()
@@ -104,6 +97,8 @@ def train(model, optimizer, loss_fn, data_iterator, metrics, params, num_steps):
         
         ##-----------------------------
         # Evaluate summaries only once in a while
+        print('summary steps',params.save_summary_steps)
+        print(i % params.save_summary_steps)
         if i % params.save_summary_steps == 0:
             # extract data from torch Variable, move to cpu, convert to numpy arrays
             output_batch = output_batch.data.cpu().numpy()
@@ -114,23 +109,26 @@ def train(model, optimizer, loss_fn, data_iterator, metrics, params, num_steps):
                              for metric in metrics}
             summary_batch['loss'] = loss.item()
             summ.append(summary_batch)
+            print(summ)
   
         # update the average loss
         loss_avg.update(loss.item())
         t.set_postfix(loss='{:05.3f}'.format(loss_avg())) #Uncomment once tqdm is installed
      
-#     print('summ=',summ)    
+    print('summ=',summ)    
     ##-----------------------------
     # compute mean of all metrics in summary
+
     metrics_mean = {metric:np.mean([x[metric] for x in summ]) for metric in summ[0]} 
     metrics_string = " ; ".join("{}: {:05.4f}".format(k, v) for k, v in metrics_mean.items())
     logging.info("- Train metrics: " + metrics_string)
-#     print('metrics_mean=',metrics_mean)
+    print('metrics_mean=',metrics_mean)
 #     print('metrics_string=',metrics_string)
     return metrics_mean
     
 #-------------------------------------------------------------------------------------------------------------
 def evaluate(model, loss_fn, data_iterator, metrics, params, num_steps):
+    print('test_eval')
     """Evaluate the model on `num_steps` batches.
     Args:
         model: (torch.nn.Module) the neural network superclass
@@ -185,7 +183,7 @@ def evaluate(model, loss_fn, data_iterator, metrics, params, num_steps):
         labels_batch = labels_batch.float() #Uncomment if using torch.nn.BCELoss() loss function
         output_batch=output_batch.view((params.batch_size)) # For 1 final neuron 
         loss = loss_fn(output_batch, labels_batch)
-#         print('labels for loss=',labels_batch)
+        print('labels for loss=',labels_batch)
 #         print('y_pred=',output_batch)
 
         # extract data from torch Variable, move to cpu, convert to numpy arrays
@@ -195,9 +193,6 @@ def evaluate(model, loss_fn, data_iterator, metrics, params, num_steps):
         # Save labels and output prob of the current batch
         labels_all=np.concatenate((labels_all,labels_batch))        
         output_all=np.concatenate((output_all,output_batch))
-
-
-
 
         # compute all metrics on this batch
         summary_batch = {metric: metrics[metric](output_batch, labels_batch)
@@ -223,6 +218,7 @@ def evaluate(model, loss_fn, data_iterator, metrics, params, num_steps):
 
 #-------------------------------------------------------------------------------------------------------------
 def train_and_evaluate(model, train_data, val_data, optimizer, loss_fn, metrics, params, model_dir, step_size, restore_file=None):
+    print('test_train_and_eval')
     """Train the model and evaluate every epoch.
     Args:
         model: (torch.nn.Module) the neural network superclass
@@ -237,7 +233,7 @@ def train_and_evaluate(model, train_data, val_data, optimizer, loss_fn, metrics,
     """
     # reload weights from restore_file if specified
     if restore_file is not None:
-        restore_path = os.path.join(args.model_dir, args.restore_file + '.pth.tar')
+        restore_path = os.path.join(model_dir, args.restore_file + '.pth.tar')
         logging.info("Restoring parameters from {}".format(restore_path))
         utils.load_checkpoint(restore_path, model, optimizer)
         
@@ -251,11 +247,12 @@ def train_and_evaluate(model, train_data, val_data, optimizer, loss_fn, metrics,
     #Create lists to access the lenght below
     train_data=list(train_data)
     val_data=list(val_data)    
-#     print('train data lenght=',len(train_data))
+    print('train data length=',len(train_data))
    
     num_steps_train=len(train_data)//params.batch_size
     num_steps_val=len(val_data)//params.batch_size
-      
+    print('num_steps_train=',num_steps_train) 
+    print('num_steps_val=',num_steps_val) 
     # We truncate the dataset so that we get an integer number of batches    
     train_x=np.asarray([x for (x,y) in train_data][0:num_steps_train*params.batch_size])
     train_y=np.asarray([y for (x,y) in train_data][0:num_steps_train*params.batch_size])        
@@ -271,17 +268,17 @@ def train_and_evaluate(model, train_data, val_data, optimizer, loss_fn, metrics,
     ##------
     # Create the dataloader for the train and val sets (default Pytorch dataloader). Paralelize the batch generation with num_workers. BATCH SIZE SHOULD ALWAYS BE = 1 (batches are only loaded here as a single element, and they are created with dataset.TreeDataset).
     train_loader = torch.utils.data.DataLoader(train_data, batch_size=1, shuffle=False,
-                                               num_workers=8, pin_memory=True, collate_fn=dataset.customized_collate) 
+                                               num_workers=4, pin_memory=True, collate_fn=dataset.customized_collate) 
                                                
     val_loader = torch.utils.data.DataLoader(val_data, batch_size=1, shuffle=False,
-                                               num_workers=8, pin_memory=True, collate_fn=dataset.customized_collate) 
+                                               num_workers=4, pin_memory=True, collate_fn=dataset.customized_collate) 
     
-    ##------
+    ##------x
     # Train/evaluate for each epoch
     for epoch in range(params.num_epochs):
-    
+
         logging.info("Epoch {}/{}".format(epoch + 1, params.num_epochs))
-      
+
         # Train one epoch
         train_metrics = train(model, optimizer, loss_fn, train_loader, metrics, params, num_steps_train)
             
@@ -335,7 +332,7 @@ def train_and_evaluate(model, train_data, val_data, optimizer, loss_fn, metrics,
         utils.save_dict_to_json(val_metrics, last_json_path)
 
         # Save loss history in a json file in the model directory
-#         print('loss_hist=',loss_hist)
+        # print('loss_hist=')
         hist_json_path = os.path.join(model_dir, "metrics_history.json")
         utils.save_dict_list_to_json(history, hist_json_path)    
 
@@ -348,21 +345,12 @@ if __name__=='__main__':
   ##----------------------------------------------------------------------------------------------------------
   # Global variables
   ##-------------------
-  # data_dir='../data/'
-  # os.system('mkdir -p '+data_dir)
-  
-  # # Select the right dir for jets data
-  # trees_dir='preprocessed_trees/'
-  # os.system('mkdir -p '+data_dir+'/'+trees_dir)
-  
 
   ##------------------------------------------------------------  
   parser = argparse.ArgumentParser()
   parser.add_argument('--data_dir', default='../data/preprocessed_trees/', help="Directory containing the input batches")
 
-  parser.add_argument('--eval_data_dir', default='../recnn/experiments', help="Directory containing the input batches")
-
-  #parser.add_argument('--model_dir', default='/recnn/experiments', help="Directory containing params.json")
+  parser.add_argument('--model_dir', default='experiments/ginkgo_kt_48_jets/run_0', help="Directory containing params.json")
   parser.add_argument('--restore_file', default=None,
                       help="Optional, name of the file in --model_dir containing weights to reload before \
                       training")  # 'best' or 'last'
@@ -370,6 +358,7 @@ if __name__=='__main__':
   parser.add_argument('--jet_algorithm', help="jet algorithm")
   parser.add_argument('--architecture', default='simpleRecNN', help="RecNN architecture")
   parser.add_argument('--sample_type', default='ginkgo', help="sample type")
+  parser.add_argument('--numjets', default='48', help="num jets")
 
 
  # dir_jets_subjets= args.data_dir
@@ -377,18 +366,24 @@ if __name__=='__main__':
   algo=args.jet_algorithm
   sample_type = args.sample_type
   architecture=args.architecture
-  model_dir = str(args.eval_data_dir)+'/'+str(args.jet_algorithm)
-  os.system('mkdir -p '+model_dir)
+  model_dir = args.model_dir
+  numjets = args.numjets
+  print('Model dir train.py=',model_dir)
+  if not os.path.exists(model_dir):
+    os.makedirs(model_dir)
+
   ##-------------------
   # Set the logger
-  utils.set_logger(os.path.join(args.model_dir, 'train.log'))
+  utils.set_logger(os.path.join(model_dir, 'train.log'))
   # Load the parameters from json file
 
-  json_path = os.path.join(args.model_dir, 'params.json')
+  json_path = os.path.join(model_dir, 'params.json')
   assert os.path.isfile(json_path), "No json configuration file found at {}".format(json_path)
   params = utils.Params(json_path)
   ##-------------------
-  sample_filename = args.sample_name  
+  #sample_filename = args.sample_name 
+  sample_filename=args.sample_type+'_'+args.jet_algorithm+'_'+args.numjets+'jets'
+ 
   logging.info('sample_filename={}'.format(sample_filename))
   
   train_data=args.data_dir+'train_'+sample_filename+'.pkl'
@@ -496,7 +491,7 @@ if __name__=='__main__':
   # Train the model
   logging.info("Starting training for {} epoch(s)".format(params.num_epochs))
 
-  train_and_evaluate(model, train_data, val_data, optimizer, loss_fn, metrics, params, args.model_dir, step_size,
+  train_and_evaluate(model, train_data, val_data, optimizer, loss_fn, metrics, params, model_dir, step_size,
                      args.restore_file)   
   
   elapsed_time=time.time()-start_time

@@ -695,6 +695,7 @@ class DataLoader(object):
           outer = np.array(outer, dtype=int)
           levels.append(np.concatenate((inner, outer)))
           n_level.append(len(levels[-1]))
+      
 
           left = prev_inner[level_children[prev_inner, 1] == 1]
           level_children[left, 0] += len(inner)
@@ -704,27 +705,32 @@ class DataLoader(object):
           contents.append(jet_contents[levels[-1]])
 
           prev_inner = inner
-     
-#       print('----'*20)
-#       print('subjets per level=',n_level)
-#       print('----'*20)
-#       print('----'*20)
-#       print('Number of levels=',len(n_level))
-#       print('----'*20)
+      print('contents_all=',contents)
+      print('levels_all=',levels)
+      print('----'*20)
+      print('subjets per level=',n_level)
+      print('----'*20)
+      print('----'*20)
+      print('Number of levels=',len(n_level))
+      print('----'*20)
       ##-----------------------------------------------
       # Zero padding
       #We loop over the levels to zero pad the array (only a few levels per jet)
       n_inners=np.asarray(n_inners)
       max_n_level=np.max(n_level)
-  #     print('max_n_level=',max_n_level)
-#       print('----'*20)
+      print('max_n_level=',max_n_level)
+      print('----'*20)
 
       for i in range(len(levels)): 
-  #       print('max_n_level-len(levels[i])=',max_n_level-len(levels[i]))
         pad_dim=int(max_n_level-len(levels[i]))
         levels[i]=np.concatenate((levels[i],np.zeros((pad_dim))))                 
-#         print('/////'*20)
-#         print('contents[i].shape=',contents[i].shape)
+        print('/////'*20)
+        print('max_n_level and len(levels[i])=',max_n_level,len(levels[i]))
+        print('levels[i]=',levels[i])
+
+        print('TEST contents[i].shape=',contents[i].shape)
+        print('TEST np.zeros((pad_dim,int(features))',(np.zeros((pad_dim,int(features)))).shape)
+        print('contents[i]=',contents[i])
         contents[i]=np.concatenate((contents[i],np.zeros((pad_dim,int(features)))))
 
       ##-----------------------------------------------

@@ -42,7 +42,7 @@ class TreeDataset(data.Dataset):
   
     if self.transform is not None:
       levels, children, n_inners, contents, n_level= self.transform(self.data[index*self.batch_size:(index+1)*self.batch_size],self.features)
-
+      
       # Shift to np arrays
       levels = np.asarray(levels)
       children = np.asarray(children)
