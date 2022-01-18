@@ -22,6 +22,9 @@ from model import preprocess
 from sklearn.metrics import roc_curve, auc
 #from scipy import interp
 from numpy import interp
+import wandb
+
+
 
 #-------------------------------------------------------------------------------------------------------------
 #/////////////////////    TRAINING AND EVALUATION FUNCTIONS     //////////////////////////////////////////////
@@ -39,8 +42,10 @@ def train(model, optimizer, loss_fn, data_iterator, metrics, params, num_steps):
     """
 
     # set model to training mode
+    wandb.init(project="Ginkgo Tree", entity="lbg251")
+    wandb.watch(model)
     model.train()
-
+    
     # summary for current training loop and a running average object for loss
     summ = []
     loss_avg = utils.RunningAverage()
@@ -50,7 +55,6 @@ def train(model, optimizer, loss_fn, data_iterator, metrics, params, num_steps):
     t = trange(num_steps) 
     
     data_iterator_iter = iter(data_iterator)
-    
     
     for i in t:
     
@@ -115,7 +119,6 @@ def train(model, optimizer, loss_fn, data_iterator, metrics, params, num_steps):
                              for metric in metrics}
             summary_batch['loss'] = loss.item()
             summ.append(summary_batch)
-  
         # update the average loss
         loss_avg.update(loss.item())
         t.set_postfix(loss='{:05.3f}'.format(loss_avg())) #Uncomment once tqdm is installed
@@ -154,7 +157,7 @@ def evaluate(model, loss_fn, data_iterator, metrics, params, num_steps):
     # compute metrics over the dataset
     
     data_iterator_iter = iter(data_iterator)
-    
+
     for _ in range(num_steps):
     
         # fetch the next evaluation batch
@@ -207,6 +210,7 @@ def evaluate(model, loss_fn, data_iterator, metrics, params, num_steps):
         summary_batch['loss'] = loss.item()
         summ.append(summary_batch)
         
+        
     ##-----------------------------
     
     ##Get the bg rejection at 30% tag eff: 0.05 + 125*(1 - 0.05)/476=0.3). That's why we pick 125
@@ -214,7 +218,7 @@ def evaluate(model, loss_fn, data_iterator, metrics, params, num_steps):
     base_tpr = np.linspace(0.05, 1, 476)
     inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
 #     print('inv_fpr at 30% tag eff=',inv_fpr)
-    
+   #wandb.log({'roc': wandb.plots.ROC(labels_all, output_all, pos_label=1)})
     # compute mean of all metrics in summary
     metrics_mean = {metric:np.mean([x[metric] for x in summ]) for metric in summ[0]} 
     metrics_string = " ; ".join("{}: {:05.4f}".format(k, v) for k, v in metrics_mean.items())
@@ -309,7 +313,7 @@ def train_and_evaluate(model, train_data, val_data, optimizer, loss_fn, metrics,
         history['train_accuracy'].append(train_metrics['accuracy'])
         history['val_accuracy'].append(val_metrics['accuracy'])
         history['val_bg_reject'].append(inv_fpr)
-        
+        wandb.log({"train_loss":train_metrics['loss'],"train_accuracy":train_metrics['accuracy'],"val_loss":val_metrics['loss'],"val_accuracy":val_metrics['accuracy']})
         scheduler.step()
         step_size = step_size * decay
         
@@ -345,7 +349,6 @@ def train_and_evaluate(model, train_data, val_data, optimizer, loss_fn, metrics,
 ###///////////////////////////////////////////////////////////////////////////////////////////////////////////
 #-------------------------------------------------------------------------------------------------------------
 if __name__=='__main__':  
-
   ##----------------------------------------------------------------------------------------------------------
   # Global variables
   ##-------------------
