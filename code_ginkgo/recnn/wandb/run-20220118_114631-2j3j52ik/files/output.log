@@ -1,0 +1,141 @@
+sample_name=ginkgo
+--------------------------------------------------------------------------------
+sample_filename=ginkgo_truth_2000jets
+------------------------------------------------------------
+Loading the datasets...
+- done loading the datasets
+------------------------------------------------------------
+Total parameters of the model= 12701
+Total weights of the model= 12701
+Model= PredictFromParticleEmbeddingNiNReLU(
+  (fc_u): Linear(in_features=4, out_features=20, bias=True)
+  (fc_h): Linear(in_features=60, out_features=20, bias=True)
+  (fc_u_inner1): Linear(in_features=4, out_features=20, bias=True)
+  (fc_u_outer1): Linear(in_features=4, out_features=20, bias=True)
+  (fc_u_inner): Linear(in_features=4, out_features=20, bias=True)
+  (fc_u_outer): Linear(in_features=4, out_features=20, bias=True)
+  (fc_N0): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N1): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N2): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N3): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N4): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N5): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N6): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N7): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N8): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N9): Linear(in_features=20, out_features=20, bias=True)
+  (transform): GRNNTransformSimpleNiNReLU(
+    (fc_u): Linear(in_features=4, out_features=20, bias=True)
+    (fc_h): Linear(in_features=60, out_features=20, bias=True)
+    (fc_u_inner1): Linear(in_features=4, out_features=20, bias=True)
+    (fc_u_outer1): Linear(in_features=4, out_features=20, bias=True)
+    (fc_u_inner): Linear(in_features=4, out_features=20, bias=True)
+    (fc_u_outer): Linear(in_features=4, out_features=20, bias=True)
+    (fc_N0): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N1): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N2): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N3): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N4): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N5): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N6): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N7): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N8): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N9): Linear(in_features=20, out_features=20, bias=True)
+  )
+  (fc1): Linear(in_features=20, out_features=20, bias=True)
+  (fc2): Linear(in_features=20, out_features=20, bias=True)
+  (fc3): Linear(in_features=20, out_features=1, bias=True)
+)
+------------------------------------------------------------
+Building optimizer...
+Starting training for 30 epoch(s)
+Epoch 1/30
+  0%|                                                                                          | 0/37 [00:00<?, ?it/s]
+  0%|                                                                                          | 0/37 [00:00<?, ?it/s][34m[1mwandb[39m[22m: Currently logged in as: [33mlbg251[39m (use `wandb login --relogin` to force relogin)
+Traceback (most recent call last):
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 931, in init
+    run = wi.init()
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 467, in init
+    backend.ensure_launched()
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 219, in ensure_launched
+    self.wandb_process.start()
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/context.py", line 284, in _Popen
+    return Popen(process_obj)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 42, in _launch
+    prep_data = spawn.get_preparation_data(process_obj._name)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/spawn.py", line 154, in get_preparation_data
+    _check_not_importing_main()
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/spawn.py", line 134, in _check_not_importing_main
+    raise RuntimeError('''
+RuntimeError:
+        An attempt has been made to start a new process before the
+        current process has finished its bootstrapping phase.
+        This probably means that you are not using fork to start your
+        child processes and you have forgotten to use the proper idiom
+        in the main module:
+            if __name__ == '__main__':
+                freeze_support()
+                ...
+        The "freeze_support()" line can be omitted if the program
+        is not going to be frozen to produce an executable.
+[34m[1mwandb[39m[22m: [32m[41mERROR[39m[49m Abnormal program exit
+Traceback (most recent call last):
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 931, in init
+    run = wi.init()
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 467, in init
+    backend.ensure_launched()
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/site-packages/wandb/sdk/backend/backend.py", line 219, in ensure_launched
+    self.wandb_process.start()
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/context.py", line 284, in _Popen
+    return Popen(process_obj)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 42, in _launch
+    prep_data = spawn.get_preparation_data(process_obj._name)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/spawn.py", line 154, in get_preparation_data
+    _check_not_importing_main()
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/spawn.py", line 134, in _check_not_importing_main
+    raise RuntimeError('''
+RuntimeError:
+        An attempt has been made to start a new process before the
+        current process has finished its bootstrapping phase.
+        This probably means that you are not using fork to start your
+        child processes and you have forgotten to use the proper idiom
+        in the main module:
+            if __name__ == '__main__':
+                freeze_support()
+                ...
+        The "freeze_support()" line can be omitted if the program
+        is not going to be frozen to produce an executable.
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/runpy.py", line 265, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/train.py", line 26, in <module>
+    wandb.init(project="Ginkgo Tree", entity="lbg251")
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 969, in init
+    six.raise_from(Exception("problem"), error_seen)
+  File "<string>", line 3, in raise_from

@@ -201,8 +201,8 @@ class DataLoader(object):
 #     train_y=np.asarray(train_y).reshape((-1,1))
 #     dev_y=np.asarray(dev_y).reshape((-1,1))
 #     test_y=np.asarray(test_y).reshape((-1,1))
-    print('test_y=',Y)
-    print('---'*20)
+    # print('test_y=',Y)
+    # print('---'*20)
     
     logging.info('X shape='+str(X.shape))
 
@@ -314,10 +314,10 @@ class DataLoader(object):
   
 #     print('Train shape=',train_x.shape)
 #     print('Val shape=',dev_x.shape)
-    print('Test shape=',test_x.shape)
-#     print('train=',train_x[0]['content'])
-    print('test_y=',test_y)
-    print('---'*20)
+#     print('Test shape=',test_x.shape)
+# #     print('train=',train_x[0]['content'])
+#     print('test_y=',test_y)
+#     print('---'*20)
   
     return test_x, test_y
 
@@ -357,13 +357,13 @@ class DataLoader(object):
     Nval=int(val_frac*size)
     Ntest=int(test_frac*size)
     
-    print('len(sg)=',len(sig))
-    print('len(bkg)=',len(bkg))
-    print('size=',size)
-    print('N_train=',N_train)
-    print('Nval=',Nval)
-    print('Ntest=',Ntest)
-    print('+-+-'*20)
+    # print('len(sg)=',len(sig))
+    # print('len(bkg)=',len(bkg))
+    # print('size=',size)
+    # print('N_train=',N_train)
+    # print('Nval=',Nval)
+    # print('Ntest=',Ntest)
+    # print('+-+-'*20)
 
 
     # Shuffle sig and bkg sets independently
@@ -392,12 +392,12 @@ class DataLoader(object):
     ##-----------------------------------------------
     # Shuffle the sets
     indices_train = check_random_state(None).permutation(len(train_x))
-    print('train_y=',train_y)
-    print('train x shape=',train_x.shape)
-    print('///'*20)
+    # print('train_y=',train_y)
+    # print('train x shape=',train_x.shape)
+    # print('///'*20)
     train_x = [train_x[indices_train[i]] for i in range(len(train_x))]
     train_y = [train_y[indices_train[i]] for i in range(len(train_y))]
-    print('train_y=',train_y)
+    # print('train_y=',train_y)
   
     indices_dev = check_random_state(None).permutation(len(dev_x))
     dev_x = [dev_x[indices_dev[i]] for i in range(len(dev_x))]
@@ -420,9 +420,9 @@ class DataLoader(object):
 #     dev_y=np.asarray(dev_y).reshape((-1,1))
 #     test_y=np.asarray(test_y).reshape((-1,1))
   
-    print('Train shape=',train_x.shape)
-    print('Val shape=',dev_x.shape)
-    print('Test shape=',test_x.shape)
+    # print('Train shape=',train_x.shape)
+    # print('Val shape=',dev_x.shape)
+    # print('Test shape=',test_x.shape)
 #     print('train=',train_x[0]['content'])
 #     print('test_y=',test_y)
    
@@ -535,10 +535,10 @@ class DataLoader(object):
       contents = []
 
       prev_inner = np.array([], dtype=int)
-      print('----'*20)
+      # print('----'*20)
       for inner, outer in zip(inners, outers):
-          print('inner=',inner)
-          print('outer=',outer)
+          # print('inner=',inner)
+          # print('outer=',outer)
         
           n_inners.append(len(inner)) # We append the number of inner nodes in each level
           inner = np.array(inner, dtype=int)
@@ -707,30 +707,30 @@ class DataLoader(object):
           prev_inner = inner
     #   print('contents_all=',contents)
     #   print('levels_all=',levels)
-      print('----'*20)
-      print('subjets per level=',n_level)
-      print('----'*20)
-      print('----'*20)
-      print('Number of levels=',len(n_level))
-      print('----'*20)
+      # print('----'*20)
+      # print('subjets per level=',n_level)
+      # print('----'*20)
+      # print('----'*20)
+      # print('Number of levels=',len(n_level))
+      # print('----'*20)
       ##-----------------------------------------------
       # Zero padding
       #We loop over the levels to zero pad the array (only a few levels per jet)
       n_inners=np.asarray(n_inners)
       max_n_level=np.max(n_level)
-      print('max_n_level=',max_n_level)
-      print('----'*20)
+      # print('max_n_level=',max_n_level)
+      # print('----'*20)
 
       for i in range(len(levels)): 
         pad_dim=int(max_n_level-len(levels[i]))
         levels[i]=np.concatenate((levels[i],np.zeros((pad_dim))))                 
-        print('/////'*20)
-        print('max_n_level and len(levels[i])=',max_n_level,len(levels[i]))
+        # print('/////'*20)
+        # print('max_n_level and len(levels[i])=',max_n_level,len(levels[i]))
         # print('levels[i]=',levels[i])
 
-        print('TEST contents[i].shape=',contents[i].shape)
-        print('TEST np.zeros((pad_dim,int(features))',(np.zeros((pad_dim,int(features)))).shape)
-        # print('contents[i]=',contents[i])
+        # print('TEST contents[i].shape=',contents[i].shape)
+        # print('TEST np.zeros((pad_dim,int(features))',(np.zeros((pad_dim,int(features)))).shape)
+        # # print('contents[i]=',contents[i])
         contents[i]=np.concatenate((contents[i],np.zeros((pad_dim,int(features)))))
 
       ##-----------------------------------------------

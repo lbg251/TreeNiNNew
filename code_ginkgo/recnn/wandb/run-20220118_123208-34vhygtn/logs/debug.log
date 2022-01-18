@@ -1,0 +1,271 @@
+2022-01-18 12:32:08,421 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting env: {}
+2022-01-18 12:32:08,428 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting login settings: {}
+2022-01-18 12:32:08,430 INFO    MainThread:19420 [wandb_init.py:_log_setup():371] Logging user logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123208-34vhygtn/logs/debug.log
+2022-01-18 12:32:08,430 INFO    MainThread:19420 [wandb_init.py:_log_setup():372] Logging internal logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123208-34vhygtn/logs/debug-internal.log
+2022-01-18 12:32:08,431 INFO    MainThread:19420 [wandb_init.py:init():404] calling init triggers
+2022-01-18 12:32:08,432 INFO    MainThread:19420 [wandb_init.py:init():409] wandb.init called with sweep_config: {}
+config: {}
+2022-01-18 12:32:08,433 INFO    MainThread:19420 [wandb_init.py:init():455] wandb.init() called when a run is still active
+2022-01-18 12:32:08,434 INFO    MainThread:19420 [wandb_watch.py:watch():43] Watching
+2022-01-18 12:32:46,645 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting env: {}
+2022-01-18 12:32:46,657 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting login settings: {}
+2022-01-18 12:32:46,658 INFO    MainThread:19420 [wandb_init.py:_log_setup():371] Logging user logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123246-2o6dz5xg/logs/debug.log
+2022-01-18 12:32:46,659 INFO    MainThread:19420 [wandb_init.py:_log_setup():372] Logging internal logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123246-2o6dz5xg/logs/debug-internal.log
+2022-01-18 12:32:46,659 INFO    MainThread:19420 [wandb_init.py:init():404] calling init triggers
+2022-01-18 12:32:46,660 INFO    MainThread:19420 [wandb_init.py:init():409] wandb.init called with sweep_config: {}
+config: {}
+2022-01-18 12:32:46,661 INFO    MainThread:19420 [wandb_init.py:init():455] wandb.init() called when a run is still active
+2022-01-18 12:32:46,661 INFO    MainThread:19420 [wandb_watch.py:watch():43] Watching
+2022-01-18 12:33:17,949 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting env: {}
+2022-01-18 12:33:17,961 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting login settings: {}
+2022-01-18 12:33:17,962 INFO    MainThread:19420 [wandb_init.py:_log_setup():371] Logging user logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123317-18htq8p2/logs/debug.log
+2022-01-18 12:33:17,963 INFO    MainThread:19420 [wandb_init.py:_log_setup():372] Logging internal logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123317-18htq8p2/logs/debug-internal.log
+2022-01-18 12:33:17,964 INFO    MainThread:19420 [wandb_init.py:init():404] calling init triggers
+2022-01-18 12:33:17,964 INFO    MainThread:19420 [wandb_init.py:init():409] wandb.init called with sweep_config: {}
+config: {}
+2022-01-18 12:33:17,965 INFO    MainThread:19420 [wandb_init.py:init():455] wandb.init() called when a run is still active
+2022-01-18 12:33:17,966 INFO    MainThread:19420 [wandb_watch.py:watch():43] Watching
+2022-01-18 12:33:48,281 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting env: {}
+2022-01-18 12:33:48,299 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting login settings: {}
+2022-01-18 12:33:48,300 INFO    MainThread:19420 [wandb_init.py:_log_setup():371] Logging user logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123348-2adg2eab/logs/debug.log
+2022-01-18 12:33:48,301 INFO    MainThread:19420 [wandb_init.py:_log_setup():372] Logging internal logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123348-2adg2eab/logs/debug-internal.log
+2022-01-18 12:33:48,302 INFO    MainThread:19420 [wandb_init.py:init():404] calling init triggers
+2022-01-18 12:33:48,302 INFO    MainThread:19420 [wandb_init.py:init():409] wandb.init called with sweep_config: {}
+config: {}
+2022-01-18 12:33:48,303 INFO    MainThread:19420 [wandb_init.py:init():455] wandb.init() called when a run is still active
+2022-01-18 12:33:48,304 INFO    MainThread:19420 [wandb_watch.py:watch():43] Watching
+2022-01-18 12:34:24,357 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting env: {}
+2022-01-18 12:34:24,373 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting login settings: {}
+2022-01-18 12:34:24,374 INFO    MainThread:19420 [wandb_init.py:_log_setup():371] Logging user logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123424-23xz1nvy/logs/debug.log
+2022-01-18 12:34:24,375 INFO    MainThread:19420 [wandb_init.py:_log_setup():372] Logging internal logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123424-23xz1nvy/logs/debug-internal.log
+2022-01-18 12:34:24,376 INFO    MainThread:19420 [wandb_init.py:init():404] calling init triggers
+2022-01-18 12:34:24,377 INFO    MainThread:19420 [wandb_init.py:init():409] wandb.init called with sweep_config: {}
+config: {}
+2022-01-18 12:34:24,378 INFO    MainThread:19420 [wandb_init.py:init():455] wandb.init() called when a run is still active
+2022-01-18 12:34:24,379 INFO    MainThread:19420 [wandb_watch.py:watch():43] Watching
+2022-01-18 12:34:56,673 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting env: {}
+2022-01-18 12:34:56,688 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting login settings: {}
+2022-01-18 12:34:56,689 INFO    MainThread:19420 [wandb_init.py:_log_setup():371] Logging user logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123456-1mhfhn1w/logs/debug.log
+2022-01-18 12:34:56,690 INFO    MainThread:19420 [wandb_init.py:_log_setup():372] Logging internal logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123456-1mhfhn1w/logs/debug-internal.log
+2022-01-18 12:34:56,691 INFO    MainThread:19420 [wandb_init.py:init():404] calling init triggers
+2022-01-18 12:34:56,692 INFO    MainThread:19420 [wandb_init.py:init():409] wandb.init called with sweep_config: {}
+config: {}
+2022-01-18 12:34:56,693 INFO    MainThread:19420 [wandb_init.py:init():455] wandb.init() called when a run is still active
+2022-01-18 12:34:56,693 INFO    MainThread:19420 [wandb_watch.py:watch():43] Watching
+2022-01-18 12:35:32,187 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting env: {}
+2022-01-18 12:35:32,210 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting login settings: {}
+2022-01-18 12:35:32,211 INFO    MainThread:19420 [wandb_init.py:_log_setup():371] Logging user logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123532-cdwoh0kk/logs/debug.log
+2022-01-18 12:35:32,212 INFO    MainThread:19420 [wandb_init.py:_log_setup():372] Logging internal logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123532-cdwoh0kk/logs/debug-internal.log
+2022-01-18 12:35:32,213 INFO    MainThread:19420 [wandb_init.py:init():404] calling init triggers
+2022-01-18 12:35:32,214 INFO    MainThread:19420 [wandb_init.py:init():409] wandb.init called with sweep_config: {}
+config: {}
+2022-01-18 12:35:32,215 INFO    MainThread:19420 [wandb_init.py:init():455] wandb.init() called when a run is still active
+2022-01-18 12:35:32,216 INFO    MainThread:19420 [wandb_watch.py:watch():43] Watching
+2022-01-18 12:36:03,644 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting env: {}
+2022-01-18 12:36:03,660 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting login settings: {}
+2022-01-18 12:36:03,661 INFO    MainThread:19420 [wandb_init.py:_log_setup():371] Logging user logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123603-qqla04cs/logs/debug.log
+2022-01-18 12:36:03,662 INFO    MainThread:19420 [wandb_init.py:_log_setup():372] Logging internal logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123603-qqla04cs/logs/debug-internal.log
+2022-01-18 12:36:03,663 INFO    MainThread:19420 [wandb_init.py:init():404] calling init triggers
+2022-01-18 12:36:03,664 INFO    MainThread:19420 [wandb_init.py:init():409] wandb.init called with sweep_config: {}
+config: {}
+2022-01-18 12:36:03,664 INFO    MainThread:19420 [wandb_init.py:init():455] wandb.init() called when a run is still active
+2022-01-18 12:36:03,665 INFO    MainThread:19420 [wandb_watch.py:watch():43] Watching
+2022-01-18 12:36:33,553 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting env: {}
+2022-01-18 12:36:33,569 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting login settings: {}
+2022-01-18 12:36:33,570 INFO    MainThread:19420 [wandb_init.py:_log_setup():371] Logging user logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123633-qfbnsu2t/logs/debug.log
+2022-01-18 12:36:33,571 INFO    MainThread:19420 [wandb_init.py:_log_setup():372] Logging internal logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123633-qfbnsu2t/logs/debug-internal.log
+2022-01-18 12:36:33,572 INFO    MainThread:19420 [wandb_init.py:init():404] calling init triggers
+2022-01-18 12:36:33,573 INFO    MainThread:19420 [wandb_init.py:init():409] wandb.init called with sweep_config: {}
+config: {}
+2022-01-18 12:36:33,574 INFO    MainThread:19420 [wandb_init.py:init():455] wandb.init() called when a run is still active
+2022-01-18 12:36:33,575 INFO    MainThread:19420 [wandb_watch.py:watch():43] Watching
+2022-01-18 12:37:03,380 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting env: {}
+2022-01-18 12:37:03,433 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting login settings: {}
+2022-01-18 12:37:03,434 INFO    MainThread:19420 [wandb_init.py:_log_setup():371] Logging user logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123703-4mgnq6vq/logs/debug.log
+2022-01-18 12:37:03,434 INFO    MainThread:19420 [wandb_init.py:_log_setup():372] Logging internal logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123703-4mgnq6vq/logs/debug-internal.log
+2022-01-18 12:37:03,435 INFO    MainThread:19420 [wandb_init.py:init():404] calling init triggers
+2022-01-18 12:37:03,436 INFO    MainThread:19420 [wandb_init.py:init():409] wandb.init called with sweep_config: {}
+config: {}
+2022-01-18 12:37:03,436 INFO    MainThread:19420 [wandb_init.py:init():455] wandb.init() called when a run is still active
+2022-01-18 12:37:03,437 INFO    MainThread:19420 [wandb_watch.py:watch():43] Watching
+2022-01-18 12:37:34,745 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting env: {}
+2022-01-18 12:37:34,761 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting login settings: {}
+2022-01-18 12:37:34,762 INFO    MainThread:19420 [wandb_init.py:_log_setup():371] Logging user logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123734-16x1e00h/logs/debug.log
+2022-01-18 12:37:34,763 INFO    MainThread:19420 [wandb_init.py:_log_setup():372] Logging internal logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123734-16x1e00h/logs/debug-internal.log
+2022-01-18 12:37:34,764 INFO    MainThread:19420 [wandb_init.py:init():404] calling init triggers
+2022-01-18 12:37:34,765 INFO    MainThread:19420 [wandb_init.py:init():409] wandb.init called with sweep_config: {}
+config: {}
+2022-01-18 12:37:34,766 INFO    MainThread:19420 [wandb_init.py:init():455] wandb.init() called when a run is still active
+2022-01-18 12:37:34,767 INFO    MainThread:19420 [wandb_watch.py:watch():43] Watching
+2022-01-18 12:38:04,884 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting env: {}
+2022-01-18 12:38:04,905 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting login settings: {}
+2022-01-18 12:38:04,907 INFO    MainThread:19420 [wandb_init.py:_log_setup():371] Logging user logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123804-1uca51ps/logs/debug.log
+2022-01-18 12:38:04,908 INFO    MainThread:19420 [wandb_init.py:_log_setup():372] Logging internal logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123804-1uca51ps/logs/debug-internal.log
+2022-01-18 12:38:04,909 INFO    MainThread:19420 [wandb_init.py:init():404] calling init triggers
+2022-01-18 12:38:04,911 INFO    MainThread:19420 [wandb_init.py:init():409] wandb.init called with sweep_config: {}
+config: {}
+2022-01-18 12:38:04,913 INFO    MainThread:19420 [wandb_init.py:init():455] wandb.init() called when a run is still active
+2022-01-18 12:38:04,914 INFO    MainThread:19420 [wandb_watch.py:watch():43] Watching
+2022-01-18 12:38:38,201 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting env: {}
+2022-01-18 12:38:38,220 INFO    MainThread:19420 [wandb_setup.py:_flush():71] setting login settings: {}
+2022-01-18 12:38:38,222 INFO    MainThread:19420 [wandb_init.py:_log_setup():371] Logging user logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123838-196ful12/logs/debug.log
+2022-01-18 12:38:38,223 INFO    MainThread:19420 [wandb_init.py:_log_setup():372] Logging internal logs to /Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/recnn/wandb/run-20220118_123838-196ful12/logs/debug-internal.log
+2022-01-18 12:38:38,224 INFO    MainThread:19420 [wandb_init.py:init():404] calling init triggers
+2022-01-18 12:38:38,225 INFO    MainThread:19420 [wandb_init.py:init():409] wandb.init called with sweep_config: {}
+config: {}
+2022-01-18 12:38:38,226 INFO    MainThread:19420 [wandb_init.py:init():455] wandb.init() called when a run is still active
+2022-01-18 12:38:38,227 INFO    MainThread:19420 [wandb_watch.py:watch():43] Watching
+2022-01-18 12:39:14,513 INFO    MainThread:19420 [wandb_run.py:_atexit_cleanup():1780] got exitcode: 0
+2022-01-18 12:39:14,535 INFO    MainThread:19420 [wandb_run.py:_restore():1752] restore
+2022-01-18 12:39:17,223 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 957
+  total_bytes: 957
+}
+
+2022-01-18 12:39:17,542 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 957
+  total_bytes: 957
+}
+
+2022-01-18 12:39:17,666 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 957
+  total_bytes: 2343293
+}
+
+2022-01-18 12:39:17,772 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 957
+  total_bytes: 2343293
+}
+
+2022-01-18 12:39:17,877 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 957
+  total_bytes: 2343293
+}
+
+2022-01-18 12:39:17,986 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 289329
+  total_bytes: 2343293
+}
+
+2022-01-18 12:39:18,095 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 337752
+  total_bytes: 2343293
+}
+
+2022-01-18 12:39:18,209 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 739160
+  total_bytes: 2343293
+}
+
+2022-01-18 12:39:18,318 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 1795928
+  total_bytes: 2343293
+}
+
+2022-01-18 12:39:18,428 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 2213720
+  total_bytes: 2343293
+}
+
+2022-01-18 12:39:18,537 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 2343293
+  total_bytes: 2343293
+}
+
+2022-01-18 12:39:18,645 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 2343293
+  total_bytes: 2343293
+}
+
+2022-01-18 12:39:18,754 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 2343293
+  total_bytes: 2343293
+}
+
+2022-01-18 12:39:18,870 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 2343293
+  total_bytes: 2343293
+}
+
+2022-01-18 12:39:18,977 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 2343293
+  total_bytes: 2343293
+}
+
+2022-01-18 12:39:19,081 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 2343293
+  total_bytes: 2343293
+}
+
+2022-01-18 12:39:21,275 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 2343293
+  total_bytes: 2343293
+}
+
+2022-01-18 12:39:21,608 INFO    MainThread:19420 [wandb_run.py:_wait_for_finish():1912] got exit ret: done: true
+exit_result {
+}
+file_counts {
+  wandb_count: 6
+}
+pusher_stats {
+  uploaded_bytes: 2343293
+  total_bytes: 2343293
+}
+local_info {
+}
+
+2022-01-18 12:39:22,925 INFO    MainThread:19420 [wandb_run.py:_append_history():2130] rendering history
+2022-01-18 12:39:22,929 INFO    MainThread:19420 [wandb_run.py:_append_summary():2085] rendering summary
+2022-01-18 12:39:22,930 INFO    MainThread:19420 [wandb_run.py:_append_files():2180] logging synced files

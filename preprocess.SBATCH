@@ -15,18 +15,13 @@ singularity exec $nv \
             /bin/bash -c "
 source /ext3/env.sh
 
-algo = []
-algo[0]=kt
-algo[1]=antikt
-algo[2]=ptasc
-algo[3]=ptdesc
-algo[4]=truth
-algo[5]=CA
+algo = [kt, antikt,ptdesc,truth,ptasc,CA]
+
 python set_topology.py  algo[${SLURM_ARRAY_TASK_ID}]
 
 cd /recnn
 num_jets = 10000
-file_name ='ginkgo_'+algo[${SLURM_ARRAY_TASK_ID}]+_+string[num_jets]+'jets.pkl'
+file_name ='ginkgo_'+str(algo[${SLURM_ARRAY_TASK_ID}])+'_'+str(num_jets)+'jets.pkl'
 python makebatches.py –-jetalgorithm=algo[${SLURM_ARRAY_TASK_ID}] –-infilename=filename
 "
 

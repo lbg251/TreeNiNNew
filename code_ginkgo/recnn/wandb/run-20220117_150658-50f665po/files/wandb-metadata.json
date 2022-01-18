@@ -1,0 +1,27 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.8.10",
+    "heartbeatAt": "2022-01-17T20:07:00.352139",
+    "startedAt": "2022-01-17T20:06:58.349327",
+    "docker": null,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [
+        "--model_dir=experiments/ginkgo/ginkgo_kt_lr_0.002_decay_0.9_batch_16_epochs_30_hidden_20_Njets_800_features_4/run_0",
+        "--data_dir=../data/preprocessed_trees/",
+        "--jet_algorithm=kt",
+        "--architecture=NiNRecNNReLU"
+    ],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "code_ginkgo/recnn/train.py",
+    "git": {
+        "remote": "https://github.com/lbg251/TreeNiNNew.git",
+        "commit": "c2842fa5460c30a2c55738838b8af305d2998c18"
+    },
+    "email": "lbg251@nyu.edu",
+    "root": "/Users/laurengreenspan/GitDLs/TreeNiNNew",
+    "host": "Laurens-Air.home",
+    "username": "laurengreenspan",
+    "executable": "/Users/laurengreenspan/miniconda3/bin/python"
+}

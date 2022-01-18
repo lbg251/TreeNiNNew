@@ -1,0 +1,77 @@
+search_hyperparams.py sample_name= ../data/preprocessed_trees/
+--------------------------------------------------------------------------------
+Model dir= experiments/ginkgo/ginkgo_truth_lr_0.002_decay_0.9_batch_32_epochs_30_hidden_20_Njets_2000_features_4/run_0
+CUDA_VISIBLE_DEVICES=2 /Users/laurengreenspan/miniconda3/bin/python train.py --model_dir=experiments/ginkgo/ginkgo_truth_lr_0.002_decay_0.9_batch_32_epochs_30_hidden_20_Njets_2000_features_4/run_0 --data_dir=../data/preprocessed_trees/ --jet_algorithm=truth --architecture=NiNRecNNReLU
+sample_name=ginkgo
+--------------------------------------------------------------------------------
+sample_filename=ginkgo_truth_2000jets
+------------------------------------------------------------
+Loading the datasets...
+- done loading the datasets
+------------------------------------------------------------
+Total parameters of the model= 12701
+Total weights of the model= 12701
+Model= PredictFromParticleEmbeddingNiNReLU(
+  (fc_u): Linear(in_features=4, out_features=20, bias=True)
+  (fc_h): Linear(in_features=60, out_features=20, bias=True)
+  (fc_u_inner1): Linear(in_features=4, out_features=20, bias=True)
+  (fc_u_outer1): Linear(in_features=4, out_features=20, bias=True)
+  (fc_u_inner): Linear(in_features=4, out_features=20, bias=True)
+  (fc_u_outer): Linear(in_features=4, out_features=20, bias=True)
+  (fc_N0): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N1): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N2): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N3): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N4): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N5): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N6): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N7): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N8): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N9): Linear(in_features=20, out_features=20, bias=True)
+  (transform): GRNNTransformSimpleNiNReLU(
+    (fc_u): Linear(in_features=4, out_features=20, bias=True)
+    (fc_h): Linear(in_features=60, out_features=20, bias=True)
+    (fc_u_inner1): Linear(in_features=4, out_features=20, bias=True)
+    (fc_u_outer1): Linear(in_features=4, out_features=20, bias=True)
+    (fc_u_inner): Linear(in_features=4, out_features=20, bias=True)
+    (fc_u_outer): Linear(in_features=4, out_features=20, bias=True)
+    (fc_N0): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N1): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N2): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N3): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N4): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N5): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N6): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N7): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N8): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N9): Linear(in_features=20, out_features=20, bias=True)
+  )
+  (fc1): Linear(in_features=20, out_features=20, bias=True)
+  (fc2): Linear(in_features=20, out_features=20, bias=True)
+  (fc3): Linear(in_features=20, out_features=1, bias=True)
+)
+------------------------------------------------------------
+Building optimizer...
+Starting training for 30 epoch(s)
+Epoch 1/30
+Watching
+Traceback (most recent call last):
+  File "train.py", line 516, in <module>
+    train_and_evaluate(model, train_data, val_data, optimizer, loss_fn, metrics, params, args.model_dir, step_size,
+  File "train.py", line 291, in train_and_evaluate
+    train_metrics = train(model, optimizer, loss_fn, train_loader, metrics, params, num_steps_train)
+  File "train.py", line 46, in train
+    wandb.watch(model)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/site-packages/wandb/sdk/wandb_watch.py", line 49, in watch
+    raise ValueError("You must call `wandb.init` before calling watch")
+ValueError: You must call `wandb.init` before calling watch
+Traceback (most recent call last):
+  File "search_hyperparams.py", line 224, in <module>
+    multi_scan(learning_rates=[2e-3],decays=[0.9], batch_sizes=[32],num_epochs=[30],hidden_dims=[20,40,80,160,320,640], jet_numbers=[2000], Nfeatures=4,dir_name='ginkgo',name=jet_algorithm, info='',sample_name=args.sample_name,Nrun_start=NrunStart,Nrun_finish=NrunFinish) #gpu1
+  File "search_hyperparams.py", line 211, in multi_scan
+    launch_training_job(parent_dir, args.data_dir, args.eval_data_dir, job_name+'/run_'+str(n_run), params, args.gpu, sample_name, jet_algorithm)
+  File "search_hyperparams.py", line 115, in launch_training_job
+    check_call(cmd_train, shell=True)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/subprocess.py", line 364, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'CUDA_VISIBLE_DEVICES=2 /Users/laurengreenspan/miniconda3/bin/python train.py --model_dir=experiments/ginkgo/ginkgo_truth_lr_0.002_decay_0.9_batch_32_epochs_30_hidden_20_Njets_2000_features_4/run_0 --data_dir=../data/preprocessed_trees/ --jet_algorithm=truth --architecture=NiNRecNNReLU' returned non-zero exit status 1.
