@@ -1,0 +1,182 @@
+
+100%|███████████████████████████████| 37/37 [00:17<00:00,  2.14it/s, loss=0.731]
+- Train metrics: accuracy: 0.4786 ; loss: 0.7395
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5286 ; loss: 0.6928
+Checkpoint Directory exists!
+- Found new best bg rejection = 4.363636363636364
+Epoch 2/30
+
+100%|███████████████████████████████| 37/37 [00:14<00:00,  2.55it/s, loss=0.694]
+- Train metrics: accuracy: 0.4967 ; loss: 0.6957
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5521 ; loss: 0.6857
+- Found new best bg rejection = 5.818181818181818
+Epoch 3/30
+  0%|                                                    | 0/37 [00:00<?, ?it/s]
+100%|███████████████████████████████| 37/37 [00:17<00:00,  2.15it/s, loss=0.689]
+- Train metrics: accuracy: 0.5263 ; loss: 0.6915
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5651 ; loss: 0.6850
+Checkpoint Directory exists!
+Epoch 4/30
+100%|███████████████████████████████| 37/37 [00:14<00:00,  2.62it/s, loss=0.687]
+- Train metrics: accuracy: 0.5395 ; loss: 0.6895
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5547 ; loss: 0.6847
+Checkpoint Directory exists!
+Epoch 5/30
+100%|███████████████████████████████| 37/37 [00:16<00:00,  2.29it/s, loss=0.685]
+- Train metrics: accuracy: 0.5263 ; loss: 0.6879
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5495 ; loss: 0.6852
+Checkpoint Directory exists!
+Epoch 6/30
+100%|███████████████████████████████| 37/37 [00:13<00:00,  2.71it/s, loss=0.681]
+- Train metrics: accuracy: 0.5444 ; loss: 0.6851
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5573 ; loss: 0.6829
+Checkpoint Directory exists!
+Epoch 7/30
+100%|███████████████████████████████| 37/37 [00:15<00:00,  2.45it/s, loss=0.681]
+- Train metrics: accuracy: 0.5395 ; loss: 0.6854
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5495 ; loss: 0.6839
+Checkpoint Directory exists!
+Epoch 8/30
+
+100%|███████████████████████████████| 37/37 [00:13<00:00,  2.79it/s, loss=0.679]
+- Train metrics: accuracy: 0.5526 ; loss: 0.6833
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5469 ; loss: 0.6846
+Checkpoint Directory exists!
+Epoch 9/30
+100%|███████████████████████████████| 37/37 [00:14<00:00,  2.61it/s, loss=0.677]
+- Train metrics: accuracy: 0.5543 ; loss: 0.6815
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5417 ; loss: 0.6849
+Checkpoint Directory exists!
+Epoch 10/30
+100%|███████████████████████████████| 37/37 [00:14<00:00,  2.55it/s, loss=0.674]
+- Train metrics: accuracy: 0.5461 ; loss: 0.6791
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5286 ; loss: 0.6851
+Checkpoint Directory exists!
+Epoch 11/30
+100%|███████████████████████████████| 37/37 [00:14<00:00,  2.56it/s, loss=0.672]
+- Train metrics: accuracy: 0.5625 ; loss: 0.6768
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5365 ; loss: 0.6856
+Checkpoint Directory exists!
+Epoch 12/30
+100%|███████████████████████████████| 37/37 [00:17<00:00,  2.09it/s, loss=0.671]
+- Train metrics: accuracy: 0.5740 ; loss: 0.6755
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5443 ; loss: 0.6856
+Checkpoint Directory exists!
+- Found new best bg rejection = 5.818181818181818
+Epoch 13/30
+
+100%|███████████████████████████████| 37/37 [00:14<00:00,  2.53it/s, loss=0.669]
+- Train metrics: accuracy: 0.5806 ; loss: 0.6736
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5469 ; loss: 0.6859
+Checkpoint Directory exists!
+Epoch 14/30
+100%|███████████████████████████████| 37/37 [00:20<00:00,  1.80it/s, loss=0.668]
+- Train metrics: accuracy: 0.5789 ; loss: 0.6723
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5339 ; loss: 0.6860
+Checkpoint Directory exists!
+Epoch 15/30
+
+100%|███████████████████████████████| 37/37 [00:32<00:00,  1.15it/s, loss=0.666]
+- Train metrics: accuracy: 0.5789 ; loss: 0.6706
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5365 ; loss: 0.6865
+Checkpoint Directory exists!
+Epoch 16/30
+100%|███████████████████████████████| 37/37 [00:38<00:00,  1.04s/it, loss=0.665]
+- Train metrics: accuracy: 0.5855 ; loss: 0.6692
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5339 ; loss: 0.6865
+Checkpoint Directory exists!
+Epoch 17/30
+
+
+100%|███████████████████████████████| 37/37 [00:51<00:00,  1.40s/it, loss=0.664]
+- Train metrics: accuracy: 0.5822 ; loss: 0.6679
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5391 ; loss: 0.6865
+Epoch 18/30
+  0%|                                                    | 0/37 [00:00<?, ?it/s]
+100%|███████████████████████████████| 37/37 [00:38<00:00,  1.05s/it, loss=0.663]
+- Train metrics: accuracy: 0.5938 ; loss: 0.6665
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5339 ; loss: 0.6867
+Checkpoint Directory exists!
+Epoch 19/30
+
+100%|███████████████████████████████| 37/37 [00:35<00:00,  1.05it/s, loss=0.662]
+- Train metrics: accuracy: 0.5938 ; loss: 0.6655
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5339 ; loss: 0.6865
+Checkpoint Directory exists!
+Epoch 20/30
+
+100%|███████████████████████████████| 37/37 [00:44<00:00,  1.19s/it, loss=0.661]
+- Train metrics: accuracy: 0.5954 ; loss: 0.6644
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5339 ; loss: 0.6867
+Checkpoint Directory exists!
+Epoch 21/30
+100%|███████████████████████████████| 37/37 [00:47<00:00,  1.28s/it, loss=0.660]
+- Train metrics: accuracy: 0.5954 ; loss: 0.6636
+Traceback (most recent call last):
+  File "train.py", line 515, in <module>
+    train_and_evaluate(model, train_data, val_data, optimizer, loss_fn, metrics, params, args.model_dir, step_size,
+  File "train.py", line 294, in train_and_evaluate
+    val_metrics, inv_fpr = evaluate(model, loss_fn, val_loader, metrics, params, num_steps_val)
+  File "train.py", line 159, in evaluate
+    data_iterator_iter = iter(data_iterator)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 359, in __iter__
+    return self._get_iterator()
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 305, in _get_iterator
+    return _MultiProcessingDataLoaderIter(self)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 918, in __init__
+    w.start()
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/context.py", line 284, in _Popen
+    return Popen(process_obj)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 58, in _launch
+    self.pid = util.spawnv_passfds(spawn.get_executable(),
+  File "/Users/laurengreenspan/miniconda3/lib/python3.8/multiprocessing/util.py", line 450, in spawnv_passfds
+    errpipe_read, errpipe_write = os.pipe()
+OSError: [Errno 24] Too many open files

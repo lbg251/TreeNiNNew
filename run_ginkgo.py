@@ -8,7 +8,7 @@ import logging
 import os
 import random
 import sys
-sys.path.append("/scratch/lbg251/GinkgoTrellis/JetTree/GitDLs/ginkgo/src")
+sys.path.append("/scratch/lbg251/GitDLs/ginkgo/src")
 from ginkgo import invMass_ginkgo
 from ginkgo.utils import get_logger
 

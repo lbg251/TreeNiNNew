@@ -1,0 +1,24 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.8.10",
+    "heartbeatAt": "2022-01-20T14:53:13.046612",
+    "startedAt": "2022-01-20T14:53:11.207708",
+    "docker": null,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [
+        "--jet_algorithm=kt"
+    ],
+    "state": "running",
+    "program": "search_hyperparams.py",
+    "codePath": "code_ginkgo/recnn/search_hyperparams.py",
+    "git": {
+        "remote": "https://github.com/lbg251/TreeNiNNew.git",
+        "commit": "5ff400900caf357f675a49322640896706880888"
+    },
+    "email": "lbg251@nyu.edu",
+    "root": "/Users/laurengreenspan/GitDLs/TreeNiNNew",
+    "host": "Laurens-Air.home",
+    "username": "laurengreenspan",
+    "executable": "/Users/laurengreenspan/miniconda3/bin/python"
+}

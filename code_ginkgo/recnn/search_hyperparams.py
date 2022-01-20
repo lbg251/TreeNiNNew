@@ -17,18 +17,12 @@ import time
 # from absl import flags
 import wandb
 # wandb.init(project="Ginkgo Tree", entity="lbg251")
-# wandb.login(key="117529cf51086fe859b3f2bc348c7b486596477d")
+wandb.login(key="117529cf51086fe859b3f2bc348c7b486596477d")
 #-------------------------------------------------------------------------------------------------------------
 # Global variables
 #-----------------------------
-# HPC=False
-# if HPC:
-#   flags.DEFINE_string("wandb_dir", "/scratch/lbg251/TreeNiNNew", "wandb directory - If running seewp process, run it from there")
-# else:
-#   flags.DEFINE_string("wandb_dir", "../..",
-#                         "wandb directory - If running seewp process, run it from there")
+
 #Directory with the input trees
-# FLAGS=flags.FLAGS
 sample_name = 'ginkgo'
 jet_algorithm = ''
 
@@ -90,8 +84,7 @@ def launch_training_job(parent_dir, eval_data_dir, data_dir, job_name, params, G
         data_dir: (string) directory containing the dataset
         params: (dict) containing hyperparameters
     """
-    # wandb.init(project="Gingko Tree" , dir=FLAGS.wandb_dir)
-    # wandb.config.update(flags.FLAGS)
+
     start_time = time.time()
     print('search_hyperparams.py sample_name=',data_dir)
     print('----'*20)
@@ -167,9 +160,8 @@ if __name__ == "__main__":
     NrunFinish= int(args.NrunFinish)
 
     # Perform hyperparameters scans
-    def multi_scan(learning_rates=[2e-3],decays=[0.9], batch_sizes=[128],num_epochs=[25],hidden_dims=[40],jet_numbers=[1200000],Nfeatures=7,dir_name=None,name=None, info=None, sample_name=None, Nrun_start=0,Nrun_finish=1):
-      wandb.init(project="Ginkgo Tree", entity="lbg251")
-      parent_dir=args.parent_dir+str(dir_name)+'/'
+    def multi_scan(learning_rates,decays, batch_sizes,num_epochs,hidden_dims,jet_numbers,Nfeatures,dir_name,name, info, sample_name, Nrun_start=0,Nrun_finish=1):
+      parent_dir=args.parent_dir+str(sample_name)+'/'
       if not os.path.exists(parent_dir):
         os.makedirs(parent_dir)
 #           os.system('mkdir -p '+parent_dir)
@@ -200,18 +192,17 @@ if __name__ == "__main__":
                   # Launch job (name has to be unique)
                   job_name = str(sample_name)+'_'+str(name)+'_lr_'+str(learning_rate)+'_decay_'+str(decay)+'_batch_'+str(batch_size)+'_epochs_'+str(num_epoch)+'_hidden_'+str(hidden_dim)+'_Njets_'+str(jet_number)+'_features_'+str(params.features)
                   
-                  
-                  
+                  my_config = {"name" : str(jet_algorithm)+'_hidden_'+str(hidden_dim),
+                    "parameters" : {"epochs" : num_epoch,"learning_rate" :learning_rate,
+                    "batch_size":batch_size,"decays":decay,"hidden_dims":hidden_dim,"optimizer":"adam"}}
+                  wandb.init(project="Ginkgo Tree", entity="lbg251",config=my_config)
                   #-----------------------------------------                
                   # Run training, evaluation 
               
                   if TRAIN_and_EVALUATE:
                     for n_run in np.arange(Nrun_start,Nrun_finish):
-                      wandb.config = { "learning_rate": learning_rate,"epochs": num_epoch,"batch_size": batch_size,"algorithm":jet_algorithm, "hidden_dim":hidden_dim,"decay_rate":decay}
-
                       launch_training_job(parent_dir, args.data_dir, args.eval_data_dir, job_name+'/run_'+str(n_run), params, args.gpu, sample_name, jet_algorithm)        
                       launch_evaluation_job(parent_dir, args.data_dir, args.eval_data_dir, job_name+'/run_'+str(n_run), params, args.gpu, sample_name, jet_algorithm)
-
                   if EVALUATE:
                     for n_run in np.arange(Nrun_start,Nrun_finish):
                       launch_evaluation_job(parent_dir, args.data_dir, args.eval_data_dir, job_name+'/run_'+str(n_run), params, args.gpu, sample_name, jet_algorithm) 
@@ -220,8 +211,9 @@ if __name__ == "__main__":
     # SCANS OVER THE HYPERPARAMETER SPACE        
     #-------------------
     ##TESTS
+  
 
-multi_scan(learning_rates=[2e-3],decays=[0.9], batch_sizes=[32],num_epochs=[30],hidden_dims=[20,40,80,160,320,640], jet_numbers=[2000], Nfeatures=4,dir_name='ginkgo',name=jet_algorithm, info='',sample_name=args.sample_name,Nrun_start=NrunStart,Nrun_finish=NrunFinish) #gpu1   
+multi_scan(learning_rates=[2e-3],decays=[0.9], batch_sizes=[32],num_epochs=[30],hidden_dims=[20,40,80,160,320,640], jet_numbers=[10000], Nfeatures=4,dir_name='ginkgo',name=jet_algorithm, info='',sample_name=args.sample_name,Nrun_start=NrunStart,Nrun_finish=NrunFinish) #gpu1   
 #multi_scan(learning_rates=[2e-3],decays=[0.9], batch_sizes=[16,32,64,128],num_epochs=[30],hidden_dims=[20,40,80,160,320,640], jet_numbers=[2000], Nfeatures=4,dir_name='ginkgo',name=jet_algorithm, info='',sample_name=args.sample_name,Nrun_start=NrunStart,Nrun_finish=NrunFinish) #gpu1   
 
 

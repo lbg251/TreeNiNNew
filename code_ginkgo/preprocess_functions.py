@@ -8,8 +8,8 @@ import copy
 # import ROOT as r
 
 # PYTHONPATH
-# sys.path.append("/het/p4/macaluso/fastjet-install/lib/python2.7/site-packages")
-sys.path.append("/opt/fastjet-install/lib/python2.7/site-packages")
+sys.path.append("/scratch/lbg251/environments/fastjet-3.4.0/../fastjet-install/lib/python3.9/site-packages")
+#sys.path.append("/opt/fastjet-install/lib/python2.7/site-packages")
 import analysis_functions as af
 import fastjet as fj
 import tree_cluster_hist as cluster_h

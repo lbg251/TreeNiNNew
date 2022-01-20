@@ -1,0 +1,1 @@
+{"inv_fpr": 4.8, "train_loss": 0.6644285133010462, "train_accuracy": 0.5953947368421053, "val_loss": 0.6866947412490845, "val_accuracy": 0.5338541666666666, "_runtime": 1637, "_timestamp": 1642692819, "_step": 19, "_wandb": {"runtime": 1721}}

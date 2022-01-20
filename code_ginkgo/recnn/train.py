@@ -23,6 +23,7 @@ from sklearn.metrics import roc_curve, auc
 #from scipy import interp
 from numpy import interp
 import wandb
+wandb.login(key="117529cf51086fe859b3f2bc348c7b486596477d")
 
 
 
@@ -313,7 +314,7 @@ def train_and_evaluate(model, train_data, val_data, optimizer, loss_fn, metrics,
         history['train_accuracy'].append(train_metrics['accuracy'])
         history['val_accuracy'].append(val_metrics['accuracy'])
         history['val_bg_reject'].append(inv_fpr)
-        wandb.log({"train_loss":train_metrics['loss'],"train_accuracy":train_metrics['accuracy'],"val_loss":val_metrics['loss'],"val_accuracy":val_metrics['accuracy']})
+        wandb.log({"inv_fpr":inv_fpr,"train_loss":train_metrics['loss'],"train_accuracy":train_metrics['accuracy'],"val_loss":val_metrics['loss'],"val_accuracy":val_metrics['accuracy']})
         scheduler.step()
         step_size = step_size * decay
         
@@ -503,7 +504,6 @@ if __name__=='__main__':
 #   optimizer = optim.SGD(model.parameters(), lr = 0.01, momentum=0.9)
   optimizer = optim.Adam(model.parameters(), lr=step_size)#,eps=1e-05)
   scheduler = optim.lr_scheduler.ExponentialLR(optimizer, gamma=decay)
-
   # fetch loss function and metrics
   loss_fn = torch.nn.BCELoss()
 #   loss_fn = torch.nn.CrossEntropyLoss()

@@ -1,0 +1,57 @@
+
+100%|███████████████████████████████| 37/37 [00:14<00:00,  2.47it/s, loss=0.713]
+- Train metrics: accuracy: 0.5148 ; loss: 0.7087
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5078 ; loss: 0.6934
+Checkpoint Directory exists!
+- Found new best bg rejection = 4.266666666666667
+Epoch 2/30
+100%|███████████████████████████████| 37/37 [00:22<00:00,  1.66it/s, loss=0.692]
+- Train metrics: accuracy: 0.5378 ; loss: 0.6873
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5208 ; loss: 0.6938
+Checkpoint Directory exists!
+- Found new best bg rejection = 4.363636363636364
+Epoch 3/30
+100%|███████████████████████████████| 37/37 [00:10<00:00,  3.53it/s, loss=0.692]
+- Train metrics: accuracy: 0.5510 ; loss: 0.6865
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5443 ; loss: 0.6906
+Checkpoint Directory exists!
+Epoch 4/30
+100%|███████████████████████████████| 37/37 [00:12<00:00,  2.91it/s, loss=0.692]
+- Train metrics: accuracy: 0.5296 ; loss: 0.6860
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5521 ; loss: 0.6884
+Checkpoint Directory exists!
+Epoch 5/30
+100%|███████████████████████████████| 37/37 [00:13<00:00,  2.65it/s, loss=0.692]
+- Train metrics: accuracy: 0.5230 ; loss: 0.6860
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5495 ; loss: 0.6874
+Checkpoint Directory exists!
+Epoch 6/30
+100%|███████████████████████████████| 37/37 [00:13<00:00,  2.78it/s, loss=0.692]
+- Train metrics: accuracy: 0.5345 ; loss: 0.6866
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5365 ; loss: 0.6873
+- Found new best bg rejection = 4.465116279069767
+Epoch 7/30
+  0%|                                                    | 0/37 [00:00<?, ?it/s]
+100%|███████████████████████████████| 37/37 [00:11<00:00,  3.09it/s, loss=0.691]
+- Train metrics: accuracy: 0.5428 ; loss: 0.6865
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]
+- Eval metrics : accuracy: 0.5260 ; loss: 0.6869
+Checkpoint Directory exists!
+Epoch 8/30
+100%|███████████████████████████████| 37/37 [00:11<00:00,  3.18it/s, loss=0.689]
+- Train metrics: accuracy: 0.5543 ; loss: 0.6860
+train.py:219: RuntimeWarning: divide by zero encountered in true_divide
+  inv_fpr = interp(base_tpr, tpr, 1. / fpr)[125]

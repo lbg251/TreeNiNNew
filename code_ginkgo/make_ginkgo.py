@@ -11,8 +11,10 @@ import time
 
 
 import sys
-sys.path.append("/Users/laurengreenspan/GitDLs/ginkgo/src/")
-sys.path.append("/Users/laurengreenspan/GitDLs/ClusterTrellis/src")
+# sys.path.append("/Users/laurengreenspan/GitDLs/ginkgo/src/")
+# sys.path.append("/Users/laurengreenspan/GitDLs/ClusterTrellis/src")
+sys.path.append("/scratch/lbg251/GitDLs/ginkgo/src")
+sys.path.append("/scratch/lbg251/GitDLs/ClusterTrellis/src")
 from ginkgo import invMass_ginkgo
 #logger = get_logger(level = logging.WARNING)
 parser = argparse.ArgumentParser()

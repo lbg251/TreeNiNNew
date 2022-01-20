@@ -43,7 +43,9 @@ start_time = time.time()
 
 
 # PYTHONPATH
-sys.path.append("/Users/laurengreenspan/fastjet-install/lib/python3.8/site-packages")
+sys.path.append("/scratch/lbg251/environments/fastjet-3.4.0/../fastjet-install/lib/python3.9/site-packages")
+
+#sys.path.append("/Users/laurengreenspan/fastjet-install/lib/python3.8/site-packages")
 import fastjet as fj
 
 #import analysis_functions as af
