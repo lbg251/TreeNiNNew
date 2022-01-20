@@ -26,3 +26,6 @@ algo[5]=CA
 cd /recnn
 python search_hyperparams.py  --jet_algorithm=algo[${SLURM_ARRAY_TASK_ID}] --NrunStart=0 --NrunFinish=1 --gpu=0
 "
+
+## to submit for all algorithms: sbatch --array 0-5 HyperParamSearch.sbatch
+
