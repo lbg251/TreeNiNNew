@@ -23,7 +23,7 @@ algo[3]=ptdesc
 algo[4]=truth
 algo[5]=CA
 
-cd /recnn
+cd cd /code_ginkgo/recnn
 python search_hyperparams.py  --jet_algorithm=algo[${SLURM_ARRAY_TASK_ID}] --NrunStart=0 --NrunFinish=1 --gpu=0
 "
 

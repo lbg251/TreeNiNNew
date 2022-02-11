@@ -43,9 +43,9 @@ start_time = time.time()
 
 
 # PYTHONPATH
-sys.path.append("/scratch/lbg251/environments/fastjet-3.4.0/../fastjet-install/lib/python3.9/site-packages")
+#sys.path.append("/scratch/lbg251/environments/fastjet-3.4.0/../fastjet-install/lib/python3.9/site-packages")
 
-#sys.path.append("/Users/laurengreenspan/fastjet-install/lib/python3.8/site-packages")
+sys.path.append("/Users/laurengreenspan/fastjet-install/lib/python3.8/site-packages")
 import fastjet as fj
 
 #import analysis_functions as af
@@ -190,9 +190,19 @@ for ifile in range(N_analysis):
     # Recluster jet constituents
       out_jet = pf.recluster(event, Rjet,jetdef_tree)  
     # #Create a dictionary with all the jet tree info (topology, constituents features: eta, phi, pT, E, muon label)
-      jets_tree = pf.make_tree_list(out_jet)
 #     print('jets_tree=',jets_tree)
-    
+          # If preprocessing (shift, rot, etc)
+      if rot_boost_rot_flip:
+          # Keep only the leading jet. Then recluster jets in subjets of R=0.3
+          R_preprocess=Rtrim
+          subjets = pf.recluster(out_jet[0].constituents(), R_preprocess,jetdef_tree) 
+          #------
+          # Preprocess the jet constituents 
+          preprocessed_const_fj= pf.preprocess_nyu(subjets) 
+          # Recluster preprocessed jet constituents with original jet radius
+          preprocessed_subjets = pf.recluster(preprocessed_const_fj, Rjet,jetdef_tree) 
+          out_jet=preprocessed_subjets
+      jets_tree = pf.make_tree_list(out_jet)
     #Keep only the leading jet
       for tree, content, mass, pt in [jets_tree[0]]:
 #       print('Content=',content)

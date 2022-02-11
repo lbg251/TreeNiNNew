@@ -14,7 +14,7 @@ singularity exec $nv \
             /scratch/work/public/singularity/cuda11.0-cudnn8-devel-ubuntu18.04.sif \
             /bin/bash -c "
 source /ext3/env.sh
-
+cd /code_ginkgo
 algo = [kt, antikt,ptdesc,truth,ptasc,CA]
 
 python set_topology.py  algo[${SLURM_ARRAY_TASK_ID}]
@@ -22,7 +22,7 @@ python set_topology.py  algo[${SLURM_ARRAY_TASK_ID}]
 cd /recnn
 num_jets = 10000
 file_name ='ginkgo_'+str(algo[${SLURM_ARRAY_TASK_ID}])+'_'+str(num_jets)+'jets.pkl'
-python makebatches.py –-jetalgorithm=algo[${SLURM_ARRAY_TASK_ID}] –-infilename=filename
+python make_batches.py --jet_algorithm=algo[${SLURM_ARRAY_TASK_ID}] --in_filename=filename
 "
 
 ## to submit for all algorithms: sbatch --array 0-5 set_topology.sbatch

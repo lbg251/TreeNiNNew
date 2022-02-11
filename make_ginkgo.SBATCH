@@ -15,6 +15,7 @@ singularity exec $nv \
             /scratch/work/public/singularity/cuda11.0-cudnn8-devel-ubuntu18.04.sif \
             /bin/bash -c "
 source /ext3/env.sh
-python makeginkgo.py  –-Nsamples=100 -–jobnum=${SLURM_ARRAY_TASK_ID}
+cd /code_ginkgo
+python make_ginkgo.py  --Nsamples=100 --job_num=${SLURM_ARRAY_TASK_ID}
 "
 ## to submit(for 3 jobs): sbatch --array 0-2 make_ginkgo.sbatch

@@ -1,0 +1,68 @@
+2022-02-04 02:26:41,538:INFO: sample_name=ginkgo
+2022-02-04 02:26:41,538:INFO: --------------------------------------------------------------------------------
+2022-02-04 02:26:41,538:INFO: sample_filename=ginkgo_kt_1020000jets
+2022-02-04 02:26:41,539:INFO: ------------------------------------------------------------
+2022-02-04 02:26:41,539:INFO: Loading the datasets...
+2022-02-04 02:26:45,723:INFO: - done loading the datasets
+2022-02-04 02:26:45,723:INFO: ------------------------------------------------------------
+2022-02-04 02:26:45,835:INFO: Total parameters of the model= 2891201
+2022-02-04 02:26:45,835:INFO: Total weights of the model= 2891201
+2022-02-04 02:26:45,835:INFO: Model= PredictFromParticleEmbeddingNiNReLU(
+  (fc_u): Linear(in_features=4, out_features=320, bias=True)
+  (fc_h): Linear(in_features=960, out_features=320, bias=True)
+  (fc_u_inner1): Linear(in_features=4, out_features=320, bias=True)
+  (fc_u_outer1): Linear(in_features=4, out_features=320, bias=True)
+  (fc_u_inner): Linear(in_features=4, out_features=320, bias=True)
+  (fc_u_outer): Linear(in_features=4, out_features=320, bias=True)
+  (fc_N0): Linear(in_features=320, out_features=320, bias=True)
+  (fc_N1): Linear(in_features=320, out_features=320, bias=True)
+  (fc_N2): Linear(in_features=320, out_features=320, bias=True)
+  (fc_N3): Linear(in_features=320, out_features=320, bias=True)
+  (fc_N4): Linear(in_features=320, out_features=320, bias=True)
+  (fc_N5): Linear(in_features=320, out_features=320, bias=True)
+  (fc_N6): Linear(in_features=320, out_features=320, bias=True)
+  (fc_N7): Linear(in_features=320, out_features=320, bias=True)
+  (fc_N8): Linear(in_features=320, out_features=320, bias=True)
+  (fc_N9): Linear(in_features=320, out_features=320, bias=True)
+  (transform): GRNNTransformSimpleNiNReLU(
+    (fc_u): Linear(in_features=4, out_features=320, bias=True)
+    (fc_h): Linear(in_features=960, out_features=320, bias=True)
+    (fc_u_inner1): Linear(in_features=4, out_features=320, bias=True)
+    (fc_u_outer1): Linear(in_features=4, out_features=320, bias=True)
+    (fc_u_inner): Linear(in_features=4, out_features=320, bias=True)
+    (fc_u_outer): Linear(in_features=4, out_features=320, bias=True)
+    (fc_N0): Linear(in_features=320, out_features=320, bias=True)
+    (fc_N1): Linear(in_features=320, out_features=320, bias=True)
+    (fc_N2): Linear(in_features=320, out_features=320, bias=True)
+    (fc_N3): Linear(in_features=320, out_features=320, bias=True)
+    (fc_N4): Linear(in_features=320, out_features=320, bias=True)
+    (fc_N5): Linear(in_features=320, out_features=320, bias=True)
+    (fc_N6): Linear(in_features=320, out_features=320, bias=True)
+    (fc_N7): Linear(in_features=320, out_features=320, bias=True)
+    (fc_N8): Linear(in_features=320, out_features=320, bias=True)
+    (fc_N9): Linear(in_features=320, out_features=320, bias=True)
+  )
+  (fc1): Linear(in_features=320, out_features=320, bias=True)
+  (fc2): Linear(in_features=320, out_features=320, bias=True)
+  (fc3): Linear(in_features=320, out_features=1, bias=True)
+)
+2022-02-04 02:26:45,835:INFO: ------------------------------------------------------------
+2022-02-04 02:26:45,835:INFO: Building optimizer...
+2022-02-04 02:26:45,835:INFO: Starting training for 30 epoch(s)
+2022-02-04 02:26:47,756:INFO: Epoch 1/30
+2022-02-04 02:40:40,106:INFO: - Train metrics: accuracy: 0.4990 ; loss: 0.6940
+2022-02-04 02:41:40,763:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6932
+2022-02-04 02:41:41,131:INFO: - Found new best bg rejection = inf
+2022-02-04 02:41:41,133:INFO: Epoch 2/30
+2022-02-04 02:55:50,369:INFO: - Train metrics: accuracy: 0.4997 ; loss: 0.6936
+2022-02-04 02:56:50,986:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6932
+2022-02-04 02:56:51,371:INFO: - Found new best bg rejection = inf
+2022-02-04 02:56:51,372:INFO: Epoch 3/30
+2022-02-04 03:11:27,866:INFO: - Train metrics: accuracy: 0.4994 ; loss: 0.6933
+2022-02-04 03:12:28,463:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6932
+2022-02-04 03:12:28,843:INFO: - Found new best bg rejection = inf
+2022-02-04 03:12:28,844:INFO: Epoch 4/30
+2022-02-04 03:31:11,012:INFO: - Train metrics: accuracy: 0.5003 ; loss: 0.6933
+2022-02-04 03:32:11,786:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6931
+2022-02-04 03:32:12,174:INFO: - Found new best bg rejection = inf
+2022-02-04 03:32:12,175:INFO: Epoch 5/30

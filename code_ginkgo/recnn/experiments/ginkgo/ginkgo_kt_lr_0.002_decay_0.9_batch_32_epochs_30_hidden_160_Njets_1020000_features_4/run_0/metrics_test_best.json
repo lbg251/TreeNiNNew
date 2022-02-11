@@ -1,0 +1,6 @@
+{
+    "accuracy": 0.5,
+    "loss": 0.6931473005612692,
+    "auc": 0.5,
+    "test_bg_reject": Infinity
+}

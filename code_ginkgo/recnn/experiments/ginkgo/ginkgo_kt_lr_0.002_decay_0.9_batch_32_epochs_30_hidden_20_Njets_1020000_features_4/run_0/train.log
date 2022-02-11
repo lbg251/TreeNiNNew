@@ -1,0 +1,153 @@
+2022-02-03 15:36:55,656:INFO: sample_name=ginkgo
+2022-02-03 15:36:55,656:INFO: --------------------------------------------------------------------------------
+2022-02-03 15:36:55,656:INFO: sample_filename=ginkgo_kt_1020000jets
+2022-02-03 15:36:55,656:INFO: ------------------------------------------------------------
+2022-02-03 15:36:55,657:INFO: Loading the datasets...
+2022-02-03 15:37:00,037:INFO: - done loading the datasets
+2022-02-03 15:37:00,038:INFO: ------------------------------------------------------------
+2022-02-03 15:37:00,089:INFO: Total parameters of the model= 12701
+2022-02-03 15:37:00,089:INFO: Total weights of the model= 12701
+2022-02-03 15:37:00,089:INFO: Model= PredictFromParticleEmbeddingNiNReLU(
+  (fc_u): Linear(in_features=4, out_features=20, bias=True)
+  (fc_h): Linear(in_features=60, out_features=20, bias=True)
+  (fc_u_inner1): Linear(in_features=4, out_features=20, bias=True)
+  (fc_u_outer1): Linear(in_features=4, out_features=20, bias=True)
+  (fc_u_inner): Linear(in_features=4, out_features=20, bias=True)
+  (fc_u_outer): Linear(in_features=4, out_features=20, bias=True)
+  (fc_N0): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N1): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N2): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N3): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N4): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N5): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N6): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N7): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N8): Linear(in_features=20, out_features=20, bias=True)
+  (fc_N9): Linear(in_features=20, out_features=20, bias=True)
+  (transform): GRNNTransformSimpleNiNReLU(
+    (fc_u): Linear(in_features=4, out_features=20, bias=True)
+    (fc_h): Linear(in_features=60, out_features=20, bias=True)
+    (fc_u_inner1): Linear(in_features=4, out_features=20, bias=True)
+    (fc_u_outer1): Linear(in_features=4, out_features=20, bias=True)
+    (fc_u_inner): Linear(in_features=4, out_features=20, bias=True)
+    (fc_u_outer): Linear(in_features=4, out_features=20, bias=True)
+    (fc_N0): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N1): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N2): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N3): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N4): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N5): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N6): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N7): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N8): Linear(in_features=20, out_features=20, bias=True)
+    (fc_N9): Linear(in_features=20, out_features=20, bias=True)
+  )
+  (fc1): Linear(in_features=20, out_features=20, bias=True)
+  (fc2): Linear(in_features=20, out_features=20, bias=True)
+  (fc3): Linear(in_features=20, out_features=1, bias=True)
+)
+2022-02-03 15:37:00,089:INFO: ------------------------------------------------------------
+2022-02-03 15:37:00,089:INFO: Building optimizer...
+2022-02-03 15:37:00,090:INFO: Starting training for 30 epoch(s)
+2022-02-03 15:37:02,189:INFO: Epoch 1/30
+2022-02-03 15:40:23,918:INFO: - Train metrics: accuracy: 0.5035 ; loss: 0.6935
+2022-02-03 15:41:11,925:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6930
+2022-02-03 15:41:12,127:INFO: - Found new best bg rejection = inf
+2022-02-03 15:41:12,128:INFO: Epoch 2/30
+2022-02-03 15:44:30,815:INFO: - Train metrics: accuracy: 0.5024 ; loss: 0.6931
+2022-02-03 15:45:17,558:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6929
+2022-02-03 15:45:17,818:INFO: - Found new best bg rejection = inf
+2022-02-03 15:45:17,819:INFO: Epoch 3/30
+2022-02-03 15:48:34,169:INFO: - Train metrics: accuracy: 0.5040 ; loss: 0.6929
+2022-02-03 15:49:20,173:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6929
+2022-02-03 15:49:20,434:INFO: - Found new best bg rejection = inf
+2022-02-03 15:49:20,435:INFO: Epoch 4/30
+2022-02-03 15:52:36,503:INFO: - Train metrics: accuracy: 0.5036 ; loss: 0.6929
+2022-02-03 15:53:22,385:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6929
+2022-02-03 15:53:22,627:INFO: - Found new best bg rejection = inf
+2022-02-03 15:53:22,628:INFO: Epoch 5/30
+2022-02-03 15:56:38,851:INFO: - Train metrics: accuracy: 0.5037 ; loss: 0.6928
+2022-02-03 15:57:23,934:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6929
+2022-02-03 15:57:24,212:INFO: - Found new best bg rejection = inf
+2022-02-03 15:57:24,213:INFO: Epoch 6/30
+2022-02-03 16:00:41,112:INFO: - Train metrics: accuracy: 0.5042 ; loss: 0.6928
+2022-02-03 16:01:26,440:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6929
+2022-02-03 16:01:26,728:INFO: - Found new best bg rejection = inf
+2022-02-03 16:01:26,729:INFO: Epoch 7/30
+2022-02-03 16:04:44,458:INFO: - Train metrics: accuracy: 0.5039 ; loss: 0.6927
+2022-02-03 16:05:29,254:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6929
+2022-02-03 16:05:29,521:INFO: - Found new best bg rejection = inf
+2022-02-03 16:05:29,522:INFO: Epoch 8/30
+2022-02-03 16:08:47,860:INFO: - Train metrics: accuracy: 0.5044 ; loss: 0.6927
+2022-02-03 16:09:32,209:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6928
+2022-02-03 16:09:32,503:INFO: - Found new best bg rejection = inf
+2022-02-03 16:09:32,504:INFO: Epoch 9/30
+2022-02-03 16:12:47,136:INFO: - Train metrics: accuracy: 0.5040 ; loss: 0.6927
+2022-02-03 16:13:31,392:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6928
+2022-02-03 16:13:31,716:INFO: Epoch 10/30
+2022-02-03 16:16:49,962:INFO: - Train metrics: accuracy: 0.5054 ; loss: 0.6927
+2022-02-03 16:17:34,445:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6928
+2022-02-03 16:17:34,737:INFO: Epoch 11/30
+2022-02-03 16:20:52,086:INFO: - Train metrics: accuracy: 0.5058 ; loss: 0.6927
+2022-02-03 16:21:35,399:INFO: - Eval metrics : accuracy: 0.5014 ; loss: 0.6928
+2022-02-03 16:21:35,705:INFO: Epoch 12/30
+2022-02-03 16:24:53,665:INFO: - Train metrics: accuracy: 0.5054 ; loss: 0.6927
+2022-02-03 16:25:37,418:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6927
+2022-02-03 16:25:37,729:INFO: - Found new best bg rejection = inf
+2022-02-03 16:25:37,759:INFO: Epoch 13/30
+2022-02-03 16:28:56,029:INFO: - Train metrics: accuracy: 0.5062 ; loss: 0.6926
+2022-02-03 16:29:40,662:INFO: - Eval metrics : accuracy: 0.5000 ; loss: 0.6928
+2022-02-03 16:29:41,015:INFO: Epoch 14/30
+2022-02-03 16:32:58,911:INFO: - Train metrics: accuracy: 0.5062 ; loss: 0.6926
+2022-02-03 16:33:43,967:INFO: - Eval metrics : accuracy: 0.5056 ; loss: 0.6927
+2022-02-03 16:33:44,310:INFO: - Found new best bg rejection = inf
+2022-02-03 16:33:44,336:INFO: Epoch 15/30
+2022-02-03 16:37:02,665:INFO: - Train metrics: accuracy: 0.5066 ; loss: 0.6926
+2022-02-03 16:37:47,640:INFO: - Eval metrics : accuracy: 0.5057 ; loss: 0.6927
+2022-02-03 16:37:47,985:INFO: Epoch 16/30
+2022-02-03 16:41:07,299:INFO: - Train metrics: accuracy: 0.5067 ; loss: 0.6926
+2022-02-03 16:41:52,781:INFO: - Eval metrics : accuracy: 0.5064 ; loss: 0.6927
+2022-02-03 16:41:53,088:INFO: Epoch 17/30
+2022-02-03 16:45:19,684:INFO: - Train metrics: accuracy: 0.5066 ; loss: 0.6926
+2022-02-03 16:46:07,490:INFO: - Eval metrics : accuracy: 0.5065 ; loss: 0.6927
+2022-02-03 16:46:07,801:INFO: Epoch 18/30
+2022-02-03 16:49:40,345:INFO: - Train metrics: accuracy: 0.5067 ; loss: 0.6926
+2022-02-03 16:50:27,357:INFO: - Eval metrics : accuracy: 0.5062 ; loss: 0.6927
+2022-02-03 16:50:27,675:INFO: - Found new best bg rejection = inf
+2022-02-03 16:50:27,710:INFO: Epoch 19/30
+2022-02-03 16:53:55,874:INFO: - Train metrics: accuracy: 0.5071 ; loss: 0.6926
+2022-02-03 16:54:43,775:INFO: - Eval metrics : accuracy: 0.5065 ; loss: 0.6927
+2022-02-03 16:54:44,102:INFO: Epoch 20/30
+2022-02-03 16:58:17,661:INFO: - Train metrics: accuracy: 0.5070 ; loss: 0.6926
+2022-02-03 16:58:58,106:INFO: - Eval metrics : accuracy: 0.5061 ; loss: 0.6927
+2022-02-03 16:58:58,456:INFO: Epoch 21/30
+2022-02-03 17:02:31,087:INFO: - Train metrics: accuracy: 0.5069 ; loss: 0.6926
+2022-02-03 17:03:17,341:INFO: - Eval metrics : accuracy: 0.5066 ; loss: 0.6927
+2022-02-03 17:03:17,705:INFO: Epoch 22/30
+2022-02-03 17:06:51,710:INFO: - Train metrics: accuracy: 0.5071 ; loss: 0.6925
+2022-02-03 17:07:37,561:INFO: - Eval metrics : accuracy: 0.5065 ; loss: 0.6927
+2022-02-03 17:07:37,887:INFO: Epoch 23/30
+2022-02-03 17:11:08,766:INFO: - Train metrics: accuracy: 0.5071 ; loss: 0.6925
+2022-02-03 17:11:55,953:INFO: - Eval metrics : accuracy: 0.5067 ; loss: 0.6927
+2022-02-03 17:11:56,299:INFO: Epoch 24/30
+2022-02-03 17:15:33,495:INFO: - Train metrics: accuracy: 0.5074 ; loss: 0.6925
+2022-02-03 17:16:18,976:INFO: - Eval metrics : accuracy: 0.5066 ; loss: 0.6927
+2022-02-03 17:16:19,281:INFO: Epoch 25/30
+2022-02-03 17:19:56,218:INFO: - Train metrics: accuracy: 0.5073 ; loss: 0.6925
+2022-02-03 17:20:42,267:INFO: - Eval metrics : accuracy: 0.5066 ; loss: 0.6927
+2022-02-03 17:20:42,723:INFO: Epoch 26/30
+2022-02-03 17:24:17,622:INFO: - Train metrics: accuracy: 0.5074 ; loss: 0.6925
+2022-02-03 17:25:03,477:INFO: - Eval metrics : accuracy: 0.5064 ; loss: 0.6927
+2022-02-03 17:25:03,853:INFO: Epoch 27/30
+2022-02-03 17:28:41,393:INFO: - Train metrics: accuracy: 0.5075 ; loss: 0.6925
+2022-02-03 17:29:26,659:INFO: - Eval metrics : accuracy: 0.5066 ; loss: 0.6927
+2022-02-03 17:29:27,018:INFO: Epoch 28/30
+2022-02-03 17:32:56,565:INFO: - Train metrics: accuracy: 0.5077 ; loss: 0.6925
+2022-02-03 17:33:41,400:INFO: - Eval metrics : accuracy: 0.5068 ; loss: 0.6927
+2022-02-03 17:33:41,733:INFO: Epoch 29/30
+2022-02-03 17:37:08,934:INFO: - Train metrics: accuracy: 0.5078 ; loss: 0.6925
+2022-02-03 17:37:53,152:INFO: - Eval metrics : accuracy: 0.5068 ; loss: 0.6927
+2022-02-03 17:37:53,474:INFO: Epoch 30/30
+2022-02-03 17:41:19,685:INFO: - Train metrics: accuracy: 0.5077 ; loss: 0.6925
+2022-02-03 17:42:03,057:INFO: - Eval metrics : accuracy: 0.5066 ; loss: 0.6927
+2022-02-03 17:42:05,396:INFO: Total time (minutes) =125.16233282089233
