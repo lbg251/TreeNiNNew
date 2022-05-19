@@ -43,9 +43,9 @@ start_time = time.time()
 
 
 # PYTHONPATH
-#sys.path.append("/scratch/lbg251/environments/fastjet-3.4.0/../fastjet-install/lib/python3.9/site-packages")
+sys.path.append("/scratch/lbg251/environments/fastjet-3.4.0/../fastjet-install/lib/python3.9/site-packages")
 
-sys.path.append("/Users/laurengreenspan/fastjet-install/lib/python3.8/site-packages")
+#sys.path.append("/Users/laurengreenspan/fastjet-install/lib/python3.8/site-packages")
 import fastjet as fj
 
 #import analysis_functions as af
@@ -94,11 +94,11 @@ out_dir='/Users/laurengreenspan/GitDLs/TreeNiNNew/code_ginkgo/data/reclustered_t
 #out_dir=sys.argv[4]
 
 #-------------------------------------------------------------------------------------------------------------
-
+# Turn to true if preprocessing (shift, rotate, etc)
+rot_boost_rot_flip=True
 Rjet = 1.
-#jetdef_tree = 'truth'  
-#jetdef_tree = 'kt' 
-#jetdef_tree = 'ptdesc'     
+Rtrim = .3
+   
 print('algo = '+str( jetdef_tree))  
 
 # print("ptmin",ptmin)
@@ -228,8 +228,11 @@ for ifile in range(N_analysis):
 myNjets = len(reclustered_jets)
 print('number of reclustered_jets=',myNjets)
 
-#   out_filename = str(out_dir)+'tree_'+subjetlist[ifile].split('.')[0]+'_'+str(counter)+'.pkl'
-out_filename = str(out_dir)+'ginkgo_'+str(jetdef_tree)+'_'+str(myNjets)+'jets.pkl'
+#If preprocessing
+if rot_boost_rot_flip:
+  out_filename = str(out_dir)+'ginkgo_'+str(jetdef_tree)+'_'+str(myNjets)+'jets_rot_boost_rot_flip.pkl'
+else:
+  out_filename = str(out_dir)+'ginkgo_'+str(jetdef_tree)+'_'+str(myNjets)+'jets.pkl'
 
 
 # SAVE OUTPUT FILE
